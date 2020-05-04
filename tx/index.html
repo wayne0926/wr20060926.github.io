@@ -35,7 +35,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 		.desc{
 			margin: 1% 1% 0% 1%;
 			font-size:20px;
-			color:#fff;
+			color:#0b465d;
 		}
 	
 		button {
@@ -44,7 +44,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 		margin-left: 1%;
 		font-size:20px;
 		font-family:'STXihei';
-		border-radius:15px;
+		border-radius:30px;
 		}
 		
 		#txtJSON {
@@ -56,12 +56,14 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 			line-height:150%;
 			font-size:18px;
 			font-family:'Verdana';
+			color:#fff
 		}
 		
 		.display{
 			margin: 1% 1% 1% 1%;
 			font-family:'Verdana';
-			color:#fff
+			color:#92a5b0;
+			font-weight:bold;
 		}
 		
 		.meaning {
@@ -78,7 +80,8 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 			font-size:20px;
 			padding-left:10px;
 			font-family:"Microsoft Yahei";
-			color:#fff;
+			color:#92a5b0;
+			font-weight:bold;
 		}
 		
 		#time {
@@ -103,13 +106,29 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 }
 .biaoti{
 	font-size:30px;
+	font-weight:bold;
 }
 .container{
     width: 100％;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #85929E;
+    background-color: #f0ebeb;
+}
+.form-control{
+	border-radius:15px;
+}
+.typrcolor{
+	color:#fff;
+	background:#fb6259;
+	font-family:"Microsoft Yahei"
+}
+.srkdx{
+	width:98%;
+	margin:auto;
+}
+.tishi{
+	font-weight:500;
 }
 </style>
 </head>
@@ -117,28 +136,28 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 
 <div class="desc" >
 	<p id="autoText" class="biaoti">使用说明：</p>
-	<p id="beatText"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音，右边会出现释义。</p>
-	<p id="beatText">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
+	<p id="beatText" class="tishi"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音，右边会出现释义。</p>
+	<p id="beatText" class="tishi">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
 </div>
 
 <!------输入框------->
-<div>
-	<textarea class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
+<div class="srkdx"style="border-radius:20px;background-color:ec9c94">
+	<textarea style="background-color:#fb6259;color:#fff;"class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
 </div>
 
 <!------按钮1------->
 <div>
 <center>	
     <label for="angle-from">时间间隔：</label>
-	<input type="number" id="time" value="5" min="1">
+	<input type="number" id="time" value="5" min="1" style="border-radius:8px">
 	</br></br>
 	<label for="angle-from">英音</label> 
 	<input type="radio" name="proun" value="1" checked="true">
 	<label for="angle-from">美音</label> 
 	<input type="radio" name="proun" value="2">
 	</br></br></br>
-	<button id="convert" type="button" class="btn btn-sm" > 🎛转换 </button>
-	<button id="dictation" type="button" class="btn btn-sm" > 🎧听写 </button>
+	<button id="convert" type="button" class="typrcolor" > <b>转 换 </b></button>
+	<button id="dictation" type="button" class="typrcolor" > <b>听 写 </b></button>
 	<!--<button id="home" type="button" class="home" > 首页 </button>-->
     <p><a href="../">🏠首页</a></p> 
 
