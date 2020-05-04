@@ -1,0 +1,167 @@
+<html>
+<head>
+    <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
+    <title>自动听写工具</title>
+	<meta charset="utf8">
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<style>
+		body {
+		font-family: helvetica,Microsoft Yahei;
+		font-size:18px;
+		}
+		
+		.desc{
+			margin: 1% 1% 0% 1%;
+			font-size:20px;
+			color:#bbb;
+		}
+	
+		button {
+		 width: 100px;
+		 height: 50px;
+		margin-left: 1%;
+		font-size:20px;
+		font-family:'STXihei';
+		}
+		
+		#txtJSON {
+			height: 40%;
+			width: 98%;
+			margin: 1% 1% 1% 1%;
+			border-color: #ccc;
+			background-color:#f8f8f8;
+			line-height:150%;
+			font-size:18px;
+			font-family:'Verdana';
+		}
+		
+		.display{
+			margin: 1% 1% 1% 1%;
+			font-family:'Verdana';
+		}
+		
+		.meaning {
+			width:330px;
+			height:35%;
+			position:fixed;
+			right:10%;
+			bottom:15%;
+			iframe border:0px;
+			display:block
+		}
+		
+		label{
+			font-size:20px;
+			padding-left:10px;
+			font-family:"Microsoft Yahei"
+		}
+		
+		#time {
+			width:50px
+		}
+	</style>
+</head>
+<body>
+
+<div class="desc">
+	<h2>使用说明：</br></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音，右边会出现释义。</br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。
+</div>
+
+<!------输入框------->
+<div>
+	<textarea class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
+</div>
+
+<!------按钮1------->
+<div>
+<center>	
+    <label for="angle-from">时间间隔：</label>
+	<input type="number" id="time" value="5" min="1">
+	</br></br></br>
+	<label for="angle-from">英音</label> 
+	<input type="radio" name="proun" value="1" checked="true">
+	<label for="angle-from">美音</label> 
+	<input type="radio" name="proun" value="2">
+	</br></br></br></br>
+	<button id="convert" type="button" class="btn btn-sm" > 🎛转换 </button>
+	<button id="dictation" type="button" class="btn btn-sm" > 🎧听写 </button>
+	<!--<button id="home" type="button" class="home" > 首页 </button>-->
+	<a href="https://wr0926.ml">
+    <button>🏠首页</button>
+    </a>
+
+</div></center>
+
+<audio id="audio" style="display:none" ></audio>
+
+<!------结果框------->
+<div class="display">
+</div>
+
+<div class="meaning">
+	<iframe width="100%" height="100%" id="dictHcContent" frameborder="0" scrolling="no"></iframe>
+</div>
+
+</body>
+<script type="text/javascript">
+
+function pronance(e){
+	var pn = document.getElementsByName("proun");
+	var p = 1;
+	for(n=0;n<pn.length;n++){
+		if(pn[n].checked){
+			p = pn[n].value;
+		}
+	}
+	var audio = $("#audio");
+	audio.attr("src","http://dict.youdao.com/dictvoice?audio="+$(e).attr("class")+"&type="+p);
+	audio.get(0).play();
+	
+	$("#dictHcContent").attr("src","http://dict.cn/apis/dict3.php?q="+$(e).attr("class"));
+
+}
+
+
+//转换
+$("button#convert").click(function(){
+	
+	$(".display").empty();
+	var words = $('#txtJSON').val().split("\n");
+	for(i=0;i<words.length;i++){
+		$(".display").append("<div class='word' ><a class='"+words[i]+"' onclick='pronance(this)'>"+words[i]+"</a></div>");
+	}
+		
+});
+
+//听写
+$("button#dictation").click(function(){
+	var childs = $(".display").find("div > a");
+	var pn = document.getElementsByName("proun");
+	var p = 1;
+	for(n=0;n<pn.length;n++){
+		if(pn[n].checked){
+			p = pn[n].value;
+		}
+	}
+	var i = 0;
+	var t = document.getElementById("time").value;
+	function myloop(){
+		setTimeout(function(){
+			var audio = $("#audio");
+			audio.attr("src","http://dict.youdao.com/dictvoice?audio="+$(childs[i]).attr("class")+"&type="+p);
+			audio.get(0).play();
+			i++;
+			if(i<childs.length){
+				myloop();
+			}
+		},1000*t);
+	}
+	
+	myloop();
+
+	
+});
+		
+</script>
+</html>

@@ -1,0 +1,144 @@
+*{
+margin:0;
+}
+html,body{
+height: 100%;
+}
+body{
+background-image: linear-gradient(75deg,white,  lightgray 5%,white 15%, lightgray 55% , lightgray 90%,white);
+background-size: 100%;
+background-attachment: fixed;
+min-height: 300px;
+font-family: arial,sans-serif;
+overflow-x: hidden;
+}
+#endAPP{
+margin:100px 0 0 0;
+} 
+h1{
+margin:0;
+font-weight: normal;
+font-size: 32px;
+line-height:24px;
+margin-bottom: 50px;   
+}
+.corse{
+width: 600px;
+max-width: 100%;
+margin:auto;
+}
+.corse>div{
+display:inline-block;
+text-align: center;
+width: 50%;
+font-size: 24px;
+}
+.corse>div>span{
+display:inline-block;
+width:60px;
+background-color: black;
+color:white;
+line-height: 60px;
+text-align: center;
+border-radius: 50%;
+transition:.2s;
+box-shadow: "0 0 0 0 transparent";
+border:1px solid white;
+}
+#container{
+width: 600px;
+margin-left:calc(50% - 300px);
+margin-bottom: 100px;
+margin-top: 50px;
+position: relative;
+z-index: 1;
+}  
+#container>div{
+display:inline-block;
+width: 50%;
+padding: 20px 0;
+}
+.arm{
+border:10px solid black;
+width: 200px;
+height: 60px;
+background-color: #ffc83d;
+border-radius: 20px;
+text-align:left;
+display: inline-block;
+transition:.3s;
+}
+.right{
+text-align:right;
+}
+.arm[play=paper]::before{
+content: '✋';
+position:absolute;
+font-size: 150px;
+line-height: 0;
+transform:translate(-100px,10px) rotate(-90deg); 
+}
+.arm[play=scissors]::before{
+content: '✌️';
+position:absolute;
+font-size: 150px;
+line-height: 0;
+transform:translate(-80px,30px) rotate(-90deg); 
+}
+.arm[play=rock]::before{
+content: '✊';
+position:absolute;
+font-size: 150px;
+line-height: 0;
+transform:translate(-90px,30px) rotate(-90deg); 
+}
+#computer>div{
+transform:scaleX(-1);
+}
+#human,#computer{
+display:inline-block;
+vertical-align: middle;     
+animation-name: prePlay;
+animation-iteration-count:infinite;
+animation-direction:alternate ;
+animation-timing-function: ease-in-out;
+transition:.2s;
+}
+#human{
+transform-origin: right center;
+}
+#computer{
+animation-direction: alternate-reverse;
+transform-origin:center left ;
+}  
+input[type=button]{
+display: none;
+}
+input[type=button]:disabled+label{
+cursor:none;
+}
+.corse>label{
+width: 33.3333%;
+display:inline-block;
+vertical-align: top;
+text-align: center;
+box-sizing: border-box;
+border:1px dashed white;
+font-size: 40px;
+cursor:pointer;
+transition:.3s;
+}
+.corse>label>span{
+transform: rotate(-90deg);
+display:inline-block;
+}
+.corse>label:hover{
+border-color:gray;
+}
+@keyframes prePlay {
+from {transform: rotate(-4deg);}
+to {transform: rotate(8deg);}
+}
+.title{
+font-size: 24px;
+}
