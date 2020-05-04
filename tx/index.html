@@ -17,9 +17,9 @@ $(document).ready(function() {
  *	isAuth			是否自动
  *	isRotate		是否旋转
 */
-$('p#beatText').beatText({isAuth:false,isRotate:false});
+$('p#beatText').beatText({isAuth:true,isRotate:false,beatHeight:"0.4em",downTime:50,upTime:90});
 $('p#rotateText').beatText({isAuth:false,isRotate:true});
-$('p#autoText').beatText({isAuth:true,beatHeight:"2em",isRotate:true});
+$('p#autoText').beatText({isAuth:true,beatHeight:"1em",isRotate:true});
 $('p#roloadText').beatText({isAuth:true,beatHeight:"1em",isRotate:false,upTime:100,downTime:100});
 $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"3em",isRotate:true});
 
@@ -131,9 +131,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 	<button id="convert" type="button" class="btn btn-sm" > 🎛转换 </button>
 	<button id="dictation" type="button" class="btn btn-sm" > 🎧听写 </button>
 	<!--<button id="home" type="button" class="home" > 首页 </button>-->
-	<a href="https://wr0926.ml">
-    <button>🏠首页</button>
-    </a>
+    <p><a href="../">🏠首页</a></p> 
 
 </div></center>
 
