@@ -19,7 +19,7 @@ $(document).ready(function() {
 */
 $('p#beatText').beatText({isAuth:true,isRotate:false,beatHeight:"0.4em",downTime:50,upTime:90});
 $('p#rotateText').beatText({isAuth:false,isRotate:true});
-$('p#autoText').beatText({isAuth:true,beatHeight:"1em",isRotate:true});
+$('p#autoText').beatText({isAuth:true,beatHeight:"1em",isRotate:true,});
 $('p#roloadText').beatText({isAuth:true,beatHeight:"1em",isRotate:false,upTime:100,downTime:100});
 $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"3em",isRotate:true});
 
@@ -45,24 +45,26 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 		font-size:20px;
 		font-family:'STXihei';
 		border-radius:30px;
+		border:0;
+
 		}
 		
 		#txtJSON {
 			height: 40%;
-			width: 98%;
+			width: 98.5%;
 			margin: 1% 1% 1% 1%;
 			border-color: #ccc;
 			background-color:#f8f8f8;
 			line-height:150%;
 			font-size:18px;
 			font-family:'Verdana';
-			color:#fff
+			color:#fff;
 		}
 		
 		.display{
 			margin: 1% 1% 1% 1%;
 			font-family:'Verdana';
-			color:#92a5b0;
+			color:#0b465d;
 			font-weight:bold;
 		}
 		
@@ -81,7 +83,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 			padding-left:10px;
 			font-family:"Microsoft Yahei";
 			color:#92a5b0;
-			font-weight:bold;
+			font-weight:bold;;
 		}
 		
 		#time {
@@ -121,7 +123,10 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 .typrcolor{
 	color:#fff;
 	background:#fb6259;
-	font-family:"Microsoft Yahei"
+	font-family:"Microsoft Yahei";
+	box-shadow: 0 10px 20px 0px #ec9c94;
+	border:1.5px solid #ec9c94;
+
 }
 .srkdx{
 	width:98%;
@@ -133,7 +138,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 </style>
 </head>
 <body background=id="jsi-particle-container" class="container">
-
+    <a href="../"><button  type="button" class="typrcolor" onclick="window.open('../')"> <b>返回首页</b></button></a>
 <div class="desc" >
 	<p id="autoText" class="biaoti">使用说明：</p>
 	<p id="beatText" class="tishi"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音，右边会出现释义。</p>
@@ -141,26 +146,23 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 </div>
 
 <!------输入框------->
-<div class="srkdx"style="border-radius:20px;background-color:ec9c94">
-	<textarea style="background-color:#fb6259;color:#fff;"class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
+<div class="srkdx"style="border-radius:15px;">
+	<textarea style="background-color:#fb6259;color:#fff;box-shadow: 0 10px 20px 0px #ec9c94;border:3.5px solid #ec9c94;"class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
 </div>
 
 <!------按钮1------->
-<div>
+<div></br>
 <center>	
     <label for="angle-from">时间间隔：</label>
-	<input type="number" id="time" value="5" min="1" style="border-radius:8px">
+	<input type="number" id="time" value="5" min="1" style="border-radius:8px;border-style:solid;height:30px;width:60px;color:#92a5b0;font-weight:bolder;font-size:20px;background:#f0ebeb;text-align:center;">
 	</br></br>
 	<label for="angle-from">英音</label> 
-	<input type="radio" name="proun" value="1" checked="true">
+	<input type="radio" name="proun" value="1" checked="true" style="width:20px;height:20px;">
 	<label for="angle-from">美音</label> 
-	<input type="radio" name="proun" value="2">
+	<input type="radio" name="proun" value="2" style="width:20px;height:20px;">
 	</br></br></br>
 	<button id="convert" type="button" class="typrcolor" > <b>转 换 </b></button>
 	<button id="dictation" type="button" class="typrcolor" > <b>听 写 </b></button>
-	<!--<button id="home" type="button" class="home" > 首页 </button>-->
-    <p><a href="../">🏠首页</a></p> 
-
 </div></center>
 
 <audio id="audio" style="display:none" ></audio>
