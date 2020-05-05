@@ -1,31 +1,8 @@
 <html>
 <head>
-    <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
     <title>自动听写工具</title>
 	<meta charset="utf8">
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.beattext.js"></script>
-    <script type="text/javascript" src="js/easying.js"></script>
-	<script type="text/javascript">
-
-$(document).ready(function() {
-/*
- *  参数详解:
- *	upTime			上移的时间
- *	downTime		下落的时间
- *	beatHeight		上移高度
- *	isAuth			是否自动
- *	isRotate		是否旋转
-*/
-$('p#beatText').beatText({isAuth:true,isRotate:false,beatHeight:"0.4em",downTime:50,upTime:90});
-$('p#rotateText').beatText({isAuth:false,isRotate:true});
-$('p#autoText').beatText({isAuth:true,beatHeight:"1em",isRotate:true});
-$('p#roloadText').beatText({isAuth:true,beatHeight:"1em",isRotate:false,upTime:100,downTime:100});
-$('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"3em",isRotate:true});
-
-});
- 
-</script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 	<style>
 		body {
 		font-family: helvetica,Microsoft Yahei;
@@ -34,16 +11,14 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 		
 		.desc{
 			margin: 1% 1% 0% 1%;
-			font-size:20px;
+			font-size:14px;
 			color:#bbb;
 		}
 	
 		button {
-		 width: 100px;
-		 height: 50px;
+		 width: 50px;
+		 height: 20px;
 		margin-left: 1%;
-		font-size:20px;
-		font-family:'STXihei';
 		}
 		
 		#txtJSON {
@@ -52,14 +27,11 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 			margin: 1% 1% 1% 1%;
 			border-color: #ccc;
 			background-color:#f8f8f8;
-			line-height:150%;
-			font-size:18px;
-			font-family:'Verdana';
+			line-height:150%
 		}
 		
 		.display{
 			margin: 1% 1% 1% 1%;
-			font-family:'Verdana';
 		}
 		
 		.meaning {
@@ -73,43 +45,20 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 		}
 		
 		label{
-			font-size:20px;
+			font-size:14px;
 			padding-left:10px;
-			font-family:"Microsoft Yahei"
 		}
 		
 		#time {
 			width:50px
 		}
-.beat-char {
-    line-height: 3.4em;
-    position: relative;
-	display: inline-block;
-	background: transparent;
-
-}
-
-.rotate{
-	transform:rotate(360deg) ;
-	-ms-transform:rotate(360deg); 	/* IE 9 */
-	-moz-transform:rotate(360deg); 	/* Firefox */
-	-webkit-transform:rotate(360deg); /* Safari 和 Chrome */
-	-o-transform:rotate(360deg);
-	-webkit-transition-duration: 0.7s;
-
-}
-.biaoti{
-	font-size:30px
-}
-</style
 	</style>
 </head>
 <body>
 
-<div class="desc" >
-	<p id="autoText" class="biaoti">使用说明：</p>
-	<p id="beatText"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音，右边会出现释义。</p>
-	<p id="beatText">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
+<div class="desc">
+	使用说明：将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音，右边会出现释义。</br>
+	设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。
 </div>
 
 <!------输入框------->
@@ -119,21 +68,15 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 
 <!------按钮1------->
 <div>
-<center>	
-    <label for="angle-from">时间间隔：</label>
+	<button id="convert" type="button" class="btn btn-sm" > 转换 </button>
+	<button id="dictation" type="button" class="btn btn-sm" > 听写 </button>
+	<label for="angle-from">时间间隔：</label> 
 	<input type="number" id="time" value="5" min="1">
-	</br></br></br>
 	<label for="angle-from">英音</label> 
 	<input type="radio" name="proun" value="1" checked="true">
 	<label for="angle-from">美音</label> 
 	<input type="radio" name="proun" value="2">
-	</br></br></br></br>
-	<button id="convert" type="button" class="btn btn-sm" > 🎛转换 </button>
-	<button id="dictation" type="button" class="btn btn-sm" > 🎧听写 </button>
-	<!--<button id="home" type="button" class="home" > 首页 </button>-->
-    <p><a href="../">🏠首页</a></p> 
-
-</div></center>
+</div>
 
 <audio id="audio" style="display:none" ></audio>
 

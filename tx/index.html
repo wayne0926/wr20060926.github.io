@@ -69,7 +69,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 		}
 		
 		.meaning {
-			width:330px;
+			width:300px;
 			height:35%;
 			position:fixed;
 			right:10%;
@@ -139,6 +139,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 </head>
 <body background=id="jsi-particle-container" class="container">
     <a href="../"><button  type="button" class="typrcolor" onclick="window.location.href('../')"> <b>返回首页</b></button></a>
+    <a href="/old/"><button  type="button" class="typrcolor" onclick="window.location.href('/old/')"> <b>使用原版</b></button></a>
 <div class="desc" >
 	<p id="autoText" class="biaoti">使用说明：</p>
 	<p id="beatText" class="tishi"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音，右边会出现释义。</p>
@@ -160,9 +161,10 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 	<input type="radio" name="proun" value="1" style="width:20px;height:20px;">
 	<label for="angle-from">美音</label> 
 	<input type="radio" name="proun" value="2" checked="true" style="width:20px;height:20px;">
+	</br></br>
 	<button id="convert" type="button" class="typrcolor" > <b>转 换 </b></button>
 	<button id="dictation" type="button" class="typrcolor" > <b>听 写 </b></button>
-</div></center>
+</center></div>
 
 <audio id="audio" style="display:none" ></audio>
 
