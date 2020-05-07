@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
     <title>自动听写工具</title>
 	<meta charset="utf8">
@@ -24,7 +25,6 @@ $('p#roloadText').beatText({isAuth:true,beatHeight:"1em",isRotate:false,upTime:1
 $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"3em",isRotate:true});
 
 });
- 
 </script>
 	<style>
 		body {
@@ -139,7 +139,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 </head>
 <body background=id="jsi-particle-container" class="container">
     <a href="../"><button  type="button" class="typrcolor" onclick="window.location.href('../')"> <b>返回首页</b></button></a>
-    <a href="/old/"><button  type="button" class="typrcolor" onclick="window.location.href('/old/')"> <b>使用原版</b></button></a>
+    <a href="/tx/old/"><button  type="button" class="typrcolor" onclick="window.location.href('/txt/old/')"> <b>使用原版</b></button></a>
 <div class="desc" >
 	<p id="autoText" class="biaoti">使用说明：</p>
 	<p id="beatText" class="tishi"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音，右边会出现释义。</p>
@@ -172,7 +172,7 @@ $('p#autoRotateText').beatText({isAuth:true,upTime:700,downTime:700,beatHeight:"
 <div class="display">
 </div>
 
-<div class="meaning">
+<div class="meaning"> 
 	<iframe width="100%" height="100%" id="dictHcContent" frameborder="0" scrolling="no"></iframe>
 </div>
 
