@@ -9,10 +9,10 @@
     <title>
         WR主页
     </title>
-    <link rel="stylesheet" type="text/css" href="home/phone/css/normalize.css"/>
-    <link rel="stylesheet" type="text/css" href="home/phone/css/demo.css"/>
-    <link href="home/phone/css/playground.css" media="all" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="home/phone/css/component.css"/>
+    <link href="home/pc/css/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="home/pc/css/demo.css" rel="stylesheet" type="text/css"/>
+    <link href="home/pc/css/playground.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="home/pc/css/component.css" rel="stylesheet" type="text/css"/>
     <style type="text/css">
         /* Place all stylesheet code here */
         body {
@@ -158,11 +158,6 @@
             -webkit-animation-duration: 3s;
         }
 
-        .orangellow.button {
-            -webkit-animation-name: orangellowPulse;
-            -webkit-animation-duration: 5s;
-        }
-
         .wall-of-buttons {
             width: 100%;
             height: 180px;
@@ -174,40 +169,37 @@
             margin: 0 10px 9px 0;
         }
     </style>
-    [if IE]
-    [endif]
 </head>
-
 <body>
 <div class="container demo-1">
     <div class="content">
-        <div id="large-header" class="large-header">
-            <body id="radioactiveButtonsPage" class="chrome windows">
-            <div class="wall-of-buttons">
-                <a class="small orange button" href="/download">
-                    软件下载页面
-                </a>
-                <a class="small green button" href="/tx">
-                    在线听写
-                </a>
-                <a class="small blue button" href="/ewm">
-                    二维码解析生成
-                </a>
-                <a class="small magenta button" href="/suijimima">
-                    随机密码生成器
-                </a>
-                <a class="small green button" href="/mp3">
-                    音频可视化
-                </a>
-                <a class="small red button" href="/3d">
-                    3D魔方
-                </a>
-                <a class="small magenta button" href="/caiquan">
-                    猜拳游戏
-                </a>
-                <a class="small green button" href="/clock">
-                    微时钟
-
+        <div class="small-header" id="small-header">
+            <div class="chrome windows" id="radioactiveButtonsPage">
+                <div class="wall-of-buttons">
+                    <a class="small orange button" href="/download">
+                        软件下载页面
+                    </a>
+                    <a class="small green button" href="/tx">
+                        在线听写
+                    </a>
+                    <a class="small blue button" href="/ewm">
+                        二维码解析生成
+                    </a>
+                    <a class="small magenta button" href="/suijimima">
+                        随机密码生成器
+                    </a>
+                    <a class="small green button" href="/mp3">
+                        音频可视化
+                    </a>
+                    <a class="small red button" href="/3d">
+                        3D魔方
+                    </a>
+                    <a class="small magenta button" href="/caiquan">
+                        猜拳游戏
+                    </a>
+                    <a class="small green button" href="/clock">
+                        微时钟
+                    </a>
                     <a class="small magenta button" href="/tfyx">
                         拖放游戏
                     </a>
@@ -267,30 +259,31 @@
                         Got clicks?
                     </a>
                     -->
-                    <canvas id="demo-canvas">
-                    </canvas>
-                    <h1 class="main-title">
-                        欢迎进入<br>
-                        <span class="thin">
+                </div>
+                <canvas id="demo-canvas">
+                </canvas>
+                <h1 class="main-title">
+                    欢迎进入<br>
+                    <span class="thin">
                                 wr主页
-                            </span>
-                    </h1>
+                        </span>
+                </h1>
             </div>
             <nav class="codrops-demos">
                 <!--<a class="current-demo"href="pc_index.html">Demo 1</a><a href="index2.html">Demo 2</a><a href="index3.html">Demo 3</a><a href="index4.html">Demo 4</a>-->
             </nav>
         </div>
     </div>
-    <script src="home/phone/js/TweenLite.min.js">
-    </script>
-    <script src="home/phone/js/EasePack.min.js">
-    </script>
-    <script src="home/phone/js/rAF.js">
-    </script>
-    <script src="home/phone/js/demo-1.js">
-    </script>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 </div>
+<script src="home/pc/js/TweenLite.min.js">
+</script>
+<script src="home/pc/js/EasePack.min.js">
+</script>
+<script src="home/pc/js/rAF.js">
+</script>
+<script src="home/pc/js/demo-1.js">
+</script>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
 </body>
 
 
