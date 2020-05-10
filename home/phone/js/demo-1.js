@@ -1,4 +1,5 @@
 if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳到手机端
+
 } else {
     //跳到电脑端
     window.location = "pc_index.html";
