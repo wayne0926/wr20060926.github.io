@@ -4,7 +4,7 @@ if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳�
     //跳到电脑端
     window.location = "pc_index.html";
 }
-(function() {
+(function () {
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
     initHeader();
     initAnimation();
@@ -42,7 +42,7 @@ if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳�
             var p1 = points[i];
             for (var j = 0; j < points.length; j++) {
                 var p2 = points[j]
-                if (! (p1 == p2)) {
+                if (!(p1 == p2)) {
                     var placed = false;
                     for (var k = 0; k < 5; k++) {
                         if (!placed) {
@@ -71,7 +71,7 @@ if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳�
     }
 
     function addListeners() {
-        if (! ('ontouchstart' in window)) {
+        if (!('ontouchstart' in window)) {
             window.addEventListener('mousemove', mouseMove);
         }
         window.addEventListener('scroll', scrollCheck);
@@ -140,7 +140,7 @@ if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳�
             x: p.originX - 50 + Math.random() * 100,
             y: p.originY - 50 + Math.random() * 100,
             ease: Circ.easeInOut,
-            onComplete: function() {
+            onComplete: function () {
                 shiftPoint(p);
             }
         });
@@ -158,12 +158,13 @@ if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳�
     }
 
     function Circle(pos, rad, color) {
-        var _this = this; (function() {
+        var _this = this;
+        (function () {
             _this.pos = pos || null;
             _this.radius = rad || null;
             _this.color = color || null;
         })();
-        this.draw = function() {
+        this.draw = function () {
             if (!_this.active) return;
             ctx.beginPath();
             ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);

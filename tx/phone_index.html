@@ -39,7 +39,7 @@
     </script>
     <style>
         body {
-            font-family: helvetica, Microsoft Yahei;
+            font-family: helvetica, Microsoft Yahei, serif;
             font-size: 18px;
         }
 
@@ -54,7 +54,7 @@
             height: 50px;
             margin-left: 1%;
             font-size: 20px;
-            font-family: 'STXihei';
+            font-family: 'STXihei', serif;
             border-radius: 30px;
             border: 0;
 
@@ -68,31 +68,21 @@
             background-color: #f8f8f8;
             line-height: 150%;
             font-size: 18px;
-            font-family: 'Verdana';
+            font-family: 'Verdana', serif;
             color: #fff;
         }
 
         .display {
             margin: 1% 1% 1% 1%;
-            font-family: 'Verdana';
+            font-family: 'Verdana', serif;
             color: #0b465d;
             font-weight: bold;
-        }
-
-        .meaning {
-            width: 300px;
-            height: 35%;
-            position: fixed;
-            right: 10%;
-            bottom: 15%;
-            iframe：border: none;
-            display: block;
         }
 
         label {
             font-size: 20px;
             padding-left: 10px;
-            font-family: "Microsoft Yahei";
+            font-family: "Microsoft Yahei", serif;
             color: #92a5b0;
             font-weight: bold;;
         }
@@ -125,7 +115,7 @@
         }
 
         .container {
-            width: 100 ％;
+            width: 100px ％;
             height: 100%;
             margin: 0;
             padding: 0;
@@ -139,8 +129,8 @@
         .typrcolor {
             color: #fff;
             background: #fb6259;
-            font-family: "Microsoft Yahei";
-            box-shadow: 0 10px 20px 0px #ec9c94;
+            font-family: "Microsoft Yahei", serif;
+            box-shadow: 0 10px 20px 0 #ec9c94;
             border: 1.5px solid #ec9c94;
 
         }
@@ -155,7 +145,7 @@
         }
     </style>
 </head>
-<body background=id="jsi-particle-container" class="container">
+<body class="container">
 <a href="../">
     <button type="button" class="typrcolor" onclick="window.location.href('../')"><b>返回首页</b></button>
 </a>
@@ -169,22 +159,28 @@
 
 <!------输入框------->
 <div class="srkdx" style="border-radius:15px;">
-    <textarea
-            style="background-color:#B5C8D3;color:#FFF5E8;box-shadow: 0 10px 20px 0px #D0E0E9;border:3.8px solid #D0E0E9;"
-            class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
+    <label for="txtJSON"></label><textarea
+        style="background-color:#B5C8D3;color:#FFF5E8;box-shadow: 0 10px 20px 0 #D0E0E9;border:3.8px solid #D0E0E9;"
+        class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
 </div>
 
 <!------按钮1------->
 <div><br>
     <center>
         <label for="angle-from">时间间隔：</label>
-        <input type="number" id="time" value="5" min="1"
-               style="border-radius:8px;border-style:solid;height:30px;width:60px;color:#92a5b0;font-weight:bolder;font-size:20px;background:#f0ebeb;text-align:center;">
+        <label for="time"></label><input id="time" min="1"
+                                         style="border-radius:8px;border-style:solid;height:30px;width:60px;color:#92a5b0;font-weight:bolder;font-size:20px;background:#f0ebeb;text-align:center;"
+                                         type="number"
+                                         value="5">
         <br><br>
         <label for="angle-from">英音</label>
-        <input type="radio" name="proun" value="1" style="width:20px;height:20px;">
+        <label>
+            <input name="proun" style="width:20px;height:20px;" type="radio" value="1">
+        </label>
         <label for="angle-from">美音</label>
-        <input type="radio" name="proun" value="2" checked="true" style="width:20px;height:20px;">
+        <label>
+            <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
+        </label>
         <br><br>
         <button id="convert" type="button" class="typrcolor"><b>转 换 </b></button>
         <button id="dictation" type="button" class="typrcolor"><b>听 写 </b></button>
