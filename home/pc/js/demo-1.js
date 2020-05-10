@@ -1,8 +1,13 @@
+if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳到手机端
+    window.location = "phone_index.html";
+
+}
 (function() {
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
     initHeader();
     initAnimation();
     addListeners();
+
     function initHeader() {
         width = window.innerWidth;
         height = window.innerHeight;
@@ -62,6 +67,7 @@
             points[i].circle = c;
         }
     }
+
     function addListeners() {
         if (! ('ontouchstart' in window)) {
             window.addEventListener('mousemove', mouseMove);
@@ -69,6 +75,7 @@
         window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
     }
+
     function mouseMove(e) {
         var posx = posy = 0;
         if (e.pageX || e.pageY) {
@@ -81,10 +88,12 @@
         target.x = posx;
         target.y = posy;
     }
+
     function scrollCheck() {
         if (document.body.scrollTop > height) animateHeader = false;
         else animateHeader = true;
     }
+
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
@@ -92,12 +101,14 @@
         canvas.width = width;
         canvas.height = height;
     }
+
     function initAnimation() {
         animate();
         for (var i in points) {
             shiftPoint(points[i]);
         }
     }
+
     function animate() {
         if (animateHeader) {
             ctx.clearRect(0, 0, width, height);
@@ -121,6 +132,7 @@
         }
         requestAnimationFrame(animate);
     }
+
     function shiftPoint(p) {
         TweenLite.to(p, 1 + 1 * Math.random(), {
             x: p.originX - 50 + Math.random() * 100,
@@ -131,6 +143,7 @@
             }
         });
     }
+
     function drawLines(p) {
         if (!p.active) return;
         for (var i in p.closest) {
@@ -141,6 +154,7 @@
             ctx.stroke();
         }
     }
+
     function Circle(pos, rad, color) {
         var _this = this; (function() {
             _this.pos = pos || null;
@@ -155,6 +169,7 @@
             ctx.fill();
         };
     }
+
     function getDistance(p1, p2) {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }

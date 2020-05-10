@@ -186,7 +186,6 @@
         <div id="large-header" class="large-header">
             <body id="radioactiveButtonsPage" class="chrome windows">
             <div class="wall-of-buttons">
-                <center>
                     <a href="/download" class="large orange button">
                         软件下载页面
                     </a>
@@ -217,7 +216,6 @@
                         <a href="/jiantou" class="large green button">
                             箭头射击小游戏
                         </a>
-                </center>
                 <!--<a class="large orangellow button">
                     Got clicks?
                 </a>
@@ -294,46 +292,6 @@
     <script src="home/pc/js/demo-1.js">
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-    <script>
-        function secondToDate(second) {
-            if (!second) {
-                return 0;
-            }
-            var time = new Array(0, 0, 0, 0, 0);
-            if (second >= 365 * 24 * 3600) {
-                time[0] = parseInt(second / (365 * 24 * 3600));
-                second %= 365 * 24 * 3600;
-            }
-            if (second >= 24 * 3600) {
-                time[1] = parseInt(second / (24 * 3600));
-                second %= 24 * 3600;
-            }
-            if (second >= 3600) {
-                time[2] = parseInt(second / 3600);
-                second %= 3600;
-            }
-            if (second >= 60) {
-                time[3] = parseInt(second / 60);
-                second %= 60;
-            }
-            if (second > 0) {
-                time[4] = second;
-            }
-            return time;
-        }
-    </script>
-    <!-- 第二种：下面的2015, 03, 01, 6, 6, 6为年，月，日，时，分，秒，对应修改为自己的即可。 -->
-    <script type="text/javascript" language="javascript">
-        function setTime() {
-            var create_time = Math.round(new Date(Date.UTC(2015, 03, 01, 6, 6, 6)).getTime() / 1000);
-            var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
-            currentTime = secondToDate((timestamp - create_time));
-            currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天' + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4] + '秒';
-            document.getElementById("htmer_time").innerHTML = currentTimeHtml;
-        }
-
-        setInterval(setTime, 1000);
-    </script>
 </div>
 </body>
 
