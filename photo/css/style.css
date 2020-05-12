@@ -5,11 +5,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: radial-gradient(circle, #fff 30%, #ccc);
     padding: 0 40px;
     font-family: "Source Sans Pro", Helvetica, sans-serif;
     font-weight: 300;
     background-image: url("https://t1.picb.cc/uploads/2020/05/09/kEh3ke.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #grid {
