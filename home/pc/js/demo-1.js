@@ -1,5 +1,5 @@
 if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳到手机端
-    window.location = "phone_index.html";
+    window.location = "phone_index(old).html";
 
 }
 (function() {

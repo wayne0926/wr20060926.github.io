@@ -2,7 +2,7 @@ if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳�
 
 } else {
     //跳到电脑端
-    window.location = "pc_index.html";
+    window.location = "pc_index(old).html";
 }
 (function () {
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
