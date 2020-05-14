@@ -1,1 +1,1 @@
-[wr0926.ml](https://wr0926.ml)
+[wr0926.ml](wr0926.ml)
