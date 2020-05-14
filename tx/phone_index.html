@@ -7,35 +7,12 @@
     <meta charset="utf8">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.beattext.js"></script>
-    <script type="text/javascript" src="js/easying.js"></script>
     <script type="text/javascript">
         if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳到手机端
         } else {
             //跳到电脑端
             window.location = "pc_index.html";
         }
-        $(document).ready(function () {
-            /*
-             *  参数详解:
-             *	upTime			上移的时间
-             *	downTime		下落的时间
-             *	beatHeight		上移高度
-             *	isAuth			是否自动
-             *	isRotate		是否旋转
-            */
-            $('p#beatText').beatText({isAuth: true, isRotate: false, beatHeight: "0.4em", downTime: 50, upTime: 90});
-            $('p#rotateText').beatText({isAuth: false, isRotate: true});
-            $('p#autoText').beatText({isAuth: true, beatHeight: "1em", isRotate: true,});
-            $('p#roloadText').beatText({isAuth: true, beatHeight: "1em", isRotate: false, upTime: 100, downTime: 100});
-            $('p#autoRotateText').beatText({
-                isAuth: true,
-                upTime: 700,
-                downTime: 700,
-                beatHeight: "3em",
-                isRotate: true
-            });
-
-        });
     </script>
     <style>
         body {
@@ -92,14 +69,6 @@
             width: 50px;
         }
 
-        .beat-char {
-            line-height: 3.4em;
-            position: relative;
-            display: inline-block;
-            background: transparent;
-
-        }
-
         .rotate {
             transform: rotate(360deg);
             -ms-transform: rotate(360deg); /* IE 9 */
@@ -154,8 +123,8 @@
     <button type="button" class="typrcolor" onclick="window.location.href('/txt/old/')"><b>使用原版</b></button>
 </a>
 <div class="desc">
-    <p id="autoText" class="biaoti">使用说明：</p>
-    <p id="beatText" class="tishi">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
+    <p class="biaoti">使用说明：</p>
+    <p class="tishi">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
 </div>
 
 <!------输入框------->
@@ -177,13 +146,13 @@
     <label>
         <input name="proun" style="width:20px;height:20px;" type="radio" value="1">
     </label>
-        <label for="angle-from">美音</label>
-        <label>
-            <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
-        </label>
-        <br><br>
-        <button id="convert" type="button" class="typrcolor"><b>转 换 </b></button>
-        <button id="dictation" type="button" class="typrcolor"><b>听 写 </b></button>
+    <label for="angle-from">美音</label>
+    <label>
+        <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
+    </label>
+    <br><br>
+    <button class="typrcolor" id="convert" type="button"><b>转 换 </b></button>
+    <button class="typrcolor" id="dictation" type="button"><b>听 写 </b></button>
 </div>
 
 <audio id="audio" style="display:none"></audio>
