@@ -6,8 +6,14 @@
     <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
     <title>自动听写工具</title>
     <meta charset="utf8">
+    <link rel="stylesheet" type="text/css" href="button/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="button/css/vicons-font.css" />
+    <link rel="stylesheet" type="text/css" href="button/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="button/css/buttons.css" />
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="button/css/style.css">
     <script type="text/javascript" src="js/jquery.beattext.js"></script>
     <script type="text/javascript">
         if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳到手机端
@@ -33,10 +39,11 @@
             width: 100px;
             height: 50px;
             margin-left: 1%;
-            font-size: 20px;
-            font-family: 'STXihei', serif;
+            font-size: 30px;
+            font-family: 'Microsoft Yahei',serif;
             border-radius: 30px;
             border: 0;
+            text-align: center;
 
         }
 
@@ -124,8 +131,8 @@
 
 <body>
     <a href="../">
-    <button type="button" class="typrcolor" onclick="window.location.href('../')"><b>返回首页</b></button>
-</a><br>
+    <button type="button" class="button button--isi button--border-thick button--round-l button--size-m" onclick="window.location.href('../')" style="float: none;"><b>返回首页</b></button>
+</a>
     <div class="desc">
         <p id="autoText" class="biaoti">使用说明：</p>
         <p class="tishi"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音。</p>
@@ -155,10 +162,10 @@
             <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
         </label>
         <br><br>
-        <button id="convert" type="button" class="typrcolor"><b>转 换 </b></button>
-        <button class="typrcolor" id="dictation" type="button"><b>听 写 </b></button>
+        <button id="convert" type="button" class="button button--aylen button--round-l button--text-thick button--size-m button" style="float: none;"><b>转 换 </b></button>
+        <button class="button button--aylen button--round-l button--text-thick button--size-m" id="dictation" type="button" style="float: none;"><b>听 写 </b></button>
     </div>
-
+<br>
     <audio id="audio" style="display:none"></audio>
     <!------结果框------->
     <div class="display">
@@ -230,8 +237,5 @@
     });
 
 </script>
-<script src='button/js/three.min.js'></script>
-<script src='button/js/gsap.min.js'></script>
-<script src="button/js/script.js"></script>
 
 </html>

@@ -7,12 +7,12 @@
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
     <link href="home_new/assets/css/main.css" rel="stylesheet"/>
     <link href="home_new/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="home_new/cat/live2d/css/live2d.css" />
     <noscript>
         <link href="home_new/assets/css/noscript.css" rel="stylesheet"/>
     </noscript>
 </head>
 <body class="is-preload">
-
 <!-- Wrapper -->
 <div id="wrapper">
 
@@ -29,7 +29,7 @@
             </div>
         </div>
         <nav>
-            <ul>
+            <ul style="font-size: 18px;font-family: 'Microsoft Yahei';">
                 <li><a href="#app">程序</a></li>
                 <li><a href="download/">软件下载</a></li>
                 <li><a href="#about">关于</a></li>
@@ -377,12 +377,25 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <!-- BG -->
 <div id="bg"></div>
 
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
 <!-- Scripts -->
 <script src="home_new/assets/js/jquery.min.js"></script>
 <script src="home_new/assets/js/browser.min.js"></script>
 <script src="home_new/assets/js/breakpoints.min.js"></script>
 <script src="home_new/assets/js/util.js"></script>
 <script src="home_new/assets/js/main.js"></script>
-
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>//添加jquery环境（必须）
+<script type="text/javascript">
+    const message_Path = 'https://6dduu6.github.io/live2d/'; //message.js的目录（必须填写，否则无法加载交互的文字）
+    const home_Path = 'https://6dduu6.github.io/'; //网站的根目录
+</script>
+<script type="text/javascript" src="home_new/cat/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="home_new/cat/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://6dduu6.github.io/live2d/model/pio/model.json"); //model.json和其模型等都需要放在服务器网站上
 </body>
 </html>
