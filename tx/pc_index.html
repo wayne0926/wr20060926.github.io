@@ -1,7 +1,8 @@
 <html lang="zh">
+
 <head>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
     <title>自动听写工具</title>
     <meta charset="utf8">
@@ -120,57 +121,52 @@
         }
     </style>
 </head>
+
 <body>
-<!--<a href="../">
+    <a href="../">
     <button type="button" class="home" onclick="window.location.href('../')"><b>返回首页</b></button>
-</a><br>-->
-<div class="home">
-    <a href="../" type="button">
-        <span>返回首页</span>
-    </a>
-    <span class="">play</span>
-</div>
-<div class="desc">
-    <p id="autoText" class="biaoti">使用说明：</p>
-    <p class="tishi"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音。</p>
-    <p class="tishi">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
-</div>
+</a><br>
+    <div class="desc">
+        <p id="autoText" class="biaoti">使用说明：</p>
+        <p class="tishi"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音。</p>
+        <p class="tishi">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
+    </div>
 
-<!------输入框------->
-<div class="srkdx" style="border-radius:15px;">
-    <label for="txtJSON"></label><textarea
-        style="background-color:#B5C8D3;color:#FFF5E8;border:6px solid rgba(208,224,233,0.4);box-shadow: 0 10px 20px 0 #D0E0E9;"
-        class="form-control" id="txtJSON" placeholder="粘贴单词到这里，加油努力奋斗吧"></textarea>
-</div>
+    <!------输入框------->
+    <div class="srkdx" style="border-radius:15px;">
+        <label for="txtJSON"></label><textarea
+            style="background-color:#B5C8D3;color:#FFF5E8;border:6px solid rgba(208,224,233,0.4);box-shadow: 0 10px 20px 0 #D0E0E9;"
+            class="form-control" id="txtJSON" placeholder="粘贴单词到这里，加油努力奋斗吧"></textarea>
+    </div>
 
-<!------按钮1------->
-<div class="shezhi"><br>
-    <label for="angle-from">时间间隔：</label>
-    <label for="time"></label><input id="time" min="1"
-                                     style="border-radius:8px;border-style:solid;height:30px;width:60px;color:#92a5b0;font-weight:bolder;font-size:20px;background:#f0ebeb;text-align:center;"
-                                     type="number" value="5">
-    <br><br>
-    <label for="angle-from">英音</label>
-    <label>
-        <input name="proun" style="width:20px;height:20px;" type="radio" value="1">
-    </label>
-    <label for="angle-from">美音</label>
-    <label>
-        <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
-    </label>
-    <br><br>
-    <button id="convert" type="button" class="typrcolor"><b>转 换 </b></button>
-    <button class="typrcolor" id="dictation" type="button"><b>听 写 </b></button>
-</div>
+    <!------按钮1------->
+    <div class="shezhi"><br>
+        <label for="angle-from">时间间隔：</label>
+        <label for="time"></label><input id="time" min="1"
+            style="border-radius:8px;border-style:solid;height:30px;width:60px;color:#92a5b0;font-weight:bolder;font-size:20px;background:#f0ebeb;text-align:center;"
+            type="number" value="5">
+        <br><br>
+        <label for="angle-from">英音</label>
+        <label>
+            <input name="proun" style="width:20px;height:20px;" type="radio" value="1">
+        </label>
+        <label for="angle-from">美音</label>
+        <label>
+            <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
+        </label>
+        <br><br>
+        <button id="convert" type="button" class="typrcolor"><b>转 换 </b></button>
+        <button class="typrcolor" id="dictation" type="button"><b>听 写 </b></button>
+    </div>
 
-<audio id="audio" style="display:none"></audio>
-<!------结果框------->
-<div class="display">
-</div>
+    <audio id="audio" style="display:none"></audio>
+    <!------结果框------->
+    <div class="display">
+    </div>
 
-<div class="meaning">
-    <iframe width="100%" height="100%" id="dictHcContent" frameborder="0" scrolling="no"></iframe>
-</div>
+    <div class="meaning">
+        <iframe width="100%" height="100%" id="dictHcContent" frameborder="0" scrolling="no"></iframe>
+    </div>
 
 </body>
 <script type="text/javascript">
