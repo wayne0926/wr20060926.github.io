@@ -20,6 +20,18 @@
             window.location = "phone_index.html";
 
         }
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
     </script>
     <style>
         body {
@@ -27,7 +39,7 @@
             font-size: 18px;
             background-image: url("https://t1.picb.cc/uploads/2020/05/17/kYLgET.jpg");
             background-attachment: fixed;
-            background-repeat:no-repeat;
+            background-repeat: no-repeat;
             background-size: 100% 100%;
         }
 
@@ -42,7 +54,7 @@
             height: 50px;
             margin-left: 1%;
             font-size: 30px;
-            font-family: 'Microsoft Yahei',serif;
+            font-family: 'Microsoft Yahei', serif;
             border-radius: 30px;
             border: 0;
             text-align: center;
@@ -133,8 +145,9 @@
 
 <body>
     <a href="../">
-    <button type="button" class="button button--isi button--border-thick button--round-l button--size-m" onclick="window.location.href('../')" style="float: none;"><b>返回首页</b></button>
-</a>
+        <button type="button" class="button button--isi button--border-thick button--round-l button--size-m"
+            onclick="window.location.href('../')" style="float: none;"><b>返回首页</b></button>
+    </a>
     <div class="desc">
         <p id="autoText" class="biaoti">使用说明：</p>
         <p class="tishi"> 将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词；单击每个单词，会发出读音。</p>
@@ -164,10 +177,13 @@
             <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
         </label>
         <br><br>
-        <button id="convert" type="button" class="button button--aylen button--round-l button--text-thick button--size-m button" style="float: none;"><b>转 换 </b></button>
-        <button class="button button--aylen button--round-l button--text-thick button--size-m" id="dictation" type="button" style="float: none;"><b>听 写 </b></button>
+        <button id="convert" type="button"
+            class="button button--aylen button--round-l button--text-thick button--size-m button"
+            style="float: none;"><b>转 换 </b></button>
+        <button class="button button--aylen button--round-l button--text-thick button--size-m" id="dictation"
+            type="button" style="float: none;"><b>听 写 </b></button>
     </div>
-<br>
+    <br>
     <audio id="audio" style="display:none"></audio>
     <!------结果框------->
     <div class="display">

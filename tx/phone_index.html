@@ -1,7 +1,8 @@
 <html lang="zh">
+
 <head>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
     <title>WR主页-在线听写助手</title>
     <meta charset="utf8">
@@ -23,10 +24,10 @@
              *	isAuth			是否自动
              *	isRotate		是否旋转
             */
-            $('p#beatText').beatText({isAuth: true, isRotate: false, beatHeight: "0.4em", downTime: 50, upTime: 90});
-            $('p#rotateText').beatText({isAuth: false, isRotate: true});
-            $('p#autoText').beatText({isAuth: true, beatHeight: "1em", isRotate: true,});
-            $('p#roloadText').beatText({isAuth: true, beatHeight: "1em", isRotate: false, upTime: 100, downTime: 100});
+            $('p#beatText').beatText({ isAuth: true, isRotate: false, beatHeight: "0.4em", downTime: 50, upTime: 90 });
+            $('p#rotateText').beatText({ isAuth: false, isRotate: true });
+            $('p#autoText').beatText({ isAuth: true, beatHeight: "1em", isRotate: true, });
+            $('p#roloadText').beatText({ isAuth: true, beatHeight: "1em", isRotate: false, upTime: 100, downTime: 100 });
             $('p#autoRotateText').beatText({
                 isAuth: true,
                 upTime: 700,
@@ -36,6 +37,18 @@
             });
 
         });
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
     </script>
     <style>
         body {
@@ -85,7 +98,8 @@
             padding-left: 10px;
             font-family: "Microsoft Yahei", serif;
             color: #92a5b0;
-            font-weight: bold;;
+            font-weight: bold;
+            ;
         }
 
         #time {
@@ -102,9 +116,12 @@
 
         .rotate {
             transform: rotate(360deg);
-            -ms-transform: rotate(360deg); /* IE 9 */
-            -moz-transform: rotate(360deg); /* Firefox */
-            -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+            -ms-transform: rotate(360deg);
+            /* IE 9 */
+            -moz-transform: rotate(360deg);
+            /* Firefox */
+            -webkit-transform: rotate(360deg);
+            /* Safari 和 Chrome */
             -o-transform: rotate(360deg);
             -webkit-transition-duration: 0.7s;
 
@@ -146,50 +163,50 @@
         }
     </style>
 </head>
+
 <body>
-<a href="../">
-    <button type="button" class="typrcolor" onclick="window.location.href('../')"><b>返回首页</b></button>
-</a>
-<a href="/tx/old/">
-    <button type="button" class="typrcolor" onclick="window.location.href('/txt/old/')"><b>使用原版</b></button>
-</a>
-<div class="desc">
-    <p class="biaoti" id="autoText">使用说明：</p>
-    <p class="tishi" id="beatText">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
-</div>
+    <a href="../">
+        <button type="button" class="typrcolor" onclick="window.location.href('../')"><b>返回首页</b></button>
+    </a>
+    <a href="/tx/old/">
+        <button type="button" class="typrcolor" onclick="window.location.href('/txt/old/')"><b>使用原版</b></button>
+    </a>
+    <div class="desc">
+        <p class="biaoti" id="autoText">使用说明：</p>
+        <p class="tishi" id="beatText">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
+    </div>
 
-<!------输入框------->
-<div class="srkdx" style="border-radius:15px;">
-    <label for="txtJSON"></label><textarea
-        style="background-color:#B5C8D3;color:#FFF5E8;box-shadow: 0 10px 20px 0 #D0E0E9;border:3.8px solid #D0E0E9;"
-        class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
-</div>
+    <!------输入框------->
+    <div class="srkdx" style="border-radius:15px;">
+        <label for="txtJSON"></label><textarea
+            style="background-color:#B5C8D3;color:#FFF5E8;box-shadow: 0 10px 20px 0 #D0E0E9;border:3.8px solid #D0E0E9;"
+            class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
+    </div>
 
-<!------按钮1------->
-<div style="text-align: center;"><br>
-    <label for="angle-from">时间间隔：</label>
-    <label for="time"></label><input id="time" min="1"
-                                     style="border-radius:8px;border-style:solid;height:30px;width:60px;color:#92a5b0;font-weight:bolder;font-size:20px;background:#f0ebeb;text-align:center;"
-                                     type="number"
-                                     value="5">
-    <br><br>
-    <label for="angle-from">英音</label>
-    <label>
-        <input name="proun" style="width:20px;height:20px;" type="radio" value="1">
-    </label>
-    <label for="angle-from">美音</label>
-    <label>
-        <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
-    </label>
-    <br><br>
-    <button class="typrcolor" id="convert" type="button"><b>转 换 </b></button>
-    <button class="typrcolor" id="dictation" type="button"><b>听 写 </b></button>
-</div>
+    <!------按钮1------->
+    <div style="text-align: center;"><br>
+        <label for="angle-from">时间间隔：</label>
+        <label for="time"></label><input id="time" min="1"
+            style="border-radius:8px;border-style:solid;height:30px;width:60px;color:#92a5b0;font-weight:bolder;font-size:20px;background:#f0ebeb;text-align:center;"
+            type="number" value="5">
+        <br><br>
+        <label for="angle-from">英音</label>
+        <label>
+            <input name="proun" style="width:20px;height:20px;" type="radio" value="1">
+        </label>
+        <label for="angle-from">美音</label>
+        <label>
+            <input checked="true" name="proun" style="width:20px;height:20px;" type="radio" value="2">
+        </label>
+        <br><br>
+        <button class="typrcolor" id="convert" type="button"><b>转 换 </b></button>
+        <button class="typrcolor" id="dictation" type="button"><b>听 写 </b></button>
+    </div>
 
-<audio id="audio" style="display:none"></audio>
-<!------结果框------->
-<div class="display">
-</div>
+    <audio id="audio" style="display:none"></audio>
+    <!------结果框------->
+    <div class="display">
+    </div>
 </body>
 <script type="text/javascript">
 
@@ -252,4 +269,5 @@
     });
 
 </script>
+
 </html>
