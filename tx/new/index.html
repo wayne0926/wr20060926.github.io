@@ -1,152 +1,165 @@
 <!DOCTYPE html>
-<html lang="zh" <head>
-<title>WR主页-在线听写助手</title>
-<meta charset="utf8">
-<link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-<script>
+<html>
 
-	function MsgBox() //声明标识符
+<head>
+	<title>WR-在线听写助手</title>
+	<meta charset="utf8">
+	<link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script language="javascript">
+		(function () {
+			var bp = document.createElement('script');
+			var curProtocol = window.location.protocol.split(':')[0];
+			if (curProtocol === 'https') {
+				bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+			}
+			else {
+				bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+			}
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(bp, s);
+		})();
+		function MsgBox() //声明标识符
 
-	{
+		{
 
-		alert("使用说明： \n 1、将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词； \n  \n ·单击每个单词，会发出读音，右下角会出现释义。 \n  \n ·设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词"); //弹出对话框
+			alert("使用说明： \n 1、将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词； \n  \n ·单击每个单词，会发出读音，右下角会出现释义。 \n  \n ·设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词"); //弹出对话框
 
-	}
-	(function () {
-		var bp = document.createElement('script');
-		var curProtocol = window.location.protocol.split(':')[0];
-		if (curProtocol === 'https') {
-			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
 		}
-		else {
-			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		function MsgBox2() //声明标识符
+
+		{
+
+			alert("本工具有Wei Ran 搭建运维，远古级源码来源于网络，经过本人大约5个小时的初步更改，成型！"); //弹出对话框
+
 		}
-		var s = document.getElementsByTagName("script")[0];
-		s.parentNode.insertBefore(bp, s);
-	})();
-</script>
-<style>
-	body {
-		font-family: helvetica, Microsoft Yahei;
-		font-size: 18px;
-		background-image: url("https://t1.picb.cc/uploads/2020/05/17/kYLgET.jpg");
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
-	}
+	</script>
+	<style>
+		body {
+			font-family: helvetica, Microsoft Yahei;
+			font-size: 18px;
+			background-image: url("https://t1.picb.cc/uploads/2020/05/17/kYLgET.jpg");
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
 
-	.desc {
-		margin: 2% 1% 0% 3%;
-		font-size: 63px;
-		color: white;
-	}
+		.desc {
+			margin: 2% 1% 0% 3%;
+			font-size: 63px;
+			color: white;
+		}
 
-	button {
-		width: 50px;
-		height: 20px;
-		margin-left: 1%;
-	}
+		button {
+			width: 50px;
+			height: 20px;
+			margin-left: 1%;
+		}
 
-	#txtJSON {
-		height: 400px;
-		width: 96%;
-		margin: 1% 1% 1% 3%;
-		border-color: white;
-		background-color: rgba(255, 255, 255, 0.5);
-		line-height: 150%;
-		border-radius: 18px;
-		font-family: 'Verdana';
-		font-size: 17px;
-		color: white;
-		font-weight: bold;
-		box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.5);
-	}
+		#txtJSON {
+			height: 400px;
+			width: 96%;
+			margin: 1% 1% 1% 3%;
+			border-color: white;
+			background-color: rgba(255, 255, 255, 0.5);
+			line-height: 150%;
+			border-radius: 18px;
+			font-family: 'Verdana';
+			font-size: 17px;
+			color: white;
+			font-weight: bold;
+			box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.5);
+		}
 
-	.display {
-		margin: 26% 1% 1% 2%;
-		color: white;
-		font-family: 'Verdana';
-	}
+		.display {
+			margin: 26% 1% 1% 2%;
+			color: white;
+			font-family: 'Verdana';
+		}
 
-	.meaning {
-		width: 330px;
-		height: 35%;
-		position: fixed;
-		right: 10%;
-		bottom: 15%;
-		display: block;
-		margin: 0% -15% -12% 0%;
-	}
+		.meaning {
+			width: 330px;
+			height: 35%;
+			position: fixed;
+			right: 10%;
+			bottom: 15%;
+			display: block;
+			margin: 0% -15% -12% 0%;
+		}
 
-	label {
-		font-size: 14px;
-		padding-left: 10px;
-	}
+		label {
+			font-size: 14px;
+			padding-left: 10px;
+		}
 
-	#time {
-		width: 50px
-	}
+		#time {
+			width: 50px
+		}
 
-	li {
-		list-style-type: none;
-	}
+		li {
+			list-style-type: none;
+		}
 
-	.settime {
-		font-size: 40px;
-		color: rgba(255, 255, 255, 0.8);
-	}
+		.settime {
+			font-size: 40px;
+			color: rgba(255, 255, 255, 0.8);
+		}
 
-	.input-time {
-		height: 30px;
-		width: 57px;
-		border-radius: 18px;
-		background-color: rgba(255, 255, 255, 0.5);
-		border: none;
-		padding: 9px 10px 0px 9px;
-		text-align: center;
-		font-size: 20px;
-		color: #ccc;
-	}
+		.input-time {
+			height: 30px;
+			width: 57px;
+			border-radius: 18px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border: none;
+			padding: 9px 10px 0px 9px;
+			text-align: center;
+			font-size: 20px;
+			color: #ccc;
+		}
 
-	.p-music {
-		font-size: 40px;
-		color: rgba(255, 255, 255, 0.8);
-	}
+		.p-music {
+			font-size: 40px;
+			color: rgba(255, 255, 255, 0.8);
+		}
 
-	.label-text {
-		font-size: 30px;
-		color: rgba(255, 255, 255, 0.6);
-	}
+		.label-text {
+			font-size: 30px;
+			color: rgba(255, 255, 255, 0.6);
+		}
 
-	.input-set {
-		height: 20px;
-		width: 20px;
-	}
+		.input-set {
+			height: 20px;
+			width: 20px;
+		}
 
-	.how-use {
-		background-color: rgba(255, 255, 255, 0);
-		color: white;
-		border: none;
-		font-size: 20px;
-		text-decoration: underline;
-	}
+		.how-use {
+			background-color: rgba(255, 255, 255, 0);
+			color: white;
+			border: none;
+			font-size: 20px;
+			text-decoration: underline;
+		}
 
-	.button-go {
-		width: 200px;
-		height: 70px;
-		border-radius: 50px;
-		border: 5px solid rgba(255, 255, 255, 0.5);
-		background-color: rgba(255, 255, 255, 0.5);
-		font-size: 30px;
-		color: white;
-		font-weight: bold;
-	}
+		.button-go {
+			width: 200px;
+			height: 70px;
+			border-radius: 50px;
+			border: 5px solid rgba(255, 255, 255, 0.5);
+			background-color: rgba(255, 255, 255, 0.5);
+			font-size: 30px;
+			color: white;
+			font-weight: bold;
+		}
 
-	.text-ps {
-		color: white;
-	}
-</style>
+		.text-ps {
+			color: white;
+		}
+
+		.copyright {
+			font-family: Arial, Helvetica, sans-serif;
+			color: white;
+		}
+	</style>
 </head>
 
 <body>
@@ -196,23 +209,26 @@
 	<div class="meaning">
 		<iframe width="100%" height="100%" id="dictHcContent" frameborder="0" scrolling="no"></iframe>
 	</div>
+	<footer id="footer">
+		<p class="copyright">&copy; Wei Ran 搭建<input type="button" value="关于工具" onclick="MsgBox2()" class="how-use" />
 
+	</footer>
 </body>
 <script type="text/javascript">
 
 	function pronance(e) {
 		var pn = document.getElementsByName("proun");
 		var p = 1;
-		for (n = 0; n < pn.length; {
-			if(pn[n].checked) {
-			p = pn[n].value;
+		for (n = 0; n < pn.length; n++) {
+			if (pn[n].checked) {
+				p = pn[n].value;
+			}
 		}
-	}
-	var audio = $("#audio");
-	audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(e).attr("class") + "&type=" + p);
-	audio.get(0).play();
+		var audio = $("#audio");
+		audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(e).attr("class") + "&type=" + p);
+		audio.get(0).play();
 
-	$("#dictHcContent").attr("src", "http://dict.cn/apis/dict3.php?q=" + $(e).attr("class"));
+		$("#dictHcContent").attr("src", "http://dict.cn/apis/dict3.php?q=" + $(e).attr("class"));
 
 	}
 
@@ -222,7 +238,7 @@
 
 		$(".display").empty();
 		var words = $('#txtJSON').val().split("\n");
-		for (i = 0; i < words.length; {
+		for (i = 0; i < words.length; i++) {
 			$(".display").append("<div class='word' ><a class='" + words[i] + "' onclick='pronance(this)'>" + words[i] + "</a></div>");
 		}
 
@@ -233,26 +249,26 @@
 		var childs = $(".display").find("div > a");
 		var pn = document.getElementsByName("proun");
 		var p = 1;
-		for (n = 0; n < pn.length; {
-			if(pn[n].checked) {
-			p = pn[n].value;
-		}
-	}
-		var i = 0;
-	var t = document.getElementById("time").value;
-	function myloop() {
-		setTimeout(function () {
-			var audio = $("#audio");
-			audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(childs[i]).attr("class") + "&type=" + p);
-			audio.get(0).play();
-			i++;
-			if (i < childs.length) {
-				myloop();
+		for (n = 0; n < pn.length; n++) {
+			if (pn[n].checked) {
+				p = pn[n].value;
 			}
-		}, 1000 * t);
-	}
+		}
+		var i = 0;
+		var t = document.getElementById("time").value;
+		function myloop() {
+			setTimeout(function () {
+				var audio = $("#audio");
+				audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(childs[i]).attr("class") + "&type=" + p);
+				audio.get(0).play();
+				i++;
+				if (i < childs.length) {
+					myloop();
+				}
+			}, 1000 * t);
+		}
 
-	myloop();
+		myloop();
 
 
 	});
