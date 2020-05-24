@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+
+<url>
+ <loc>https://wr0926.ml/download</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://wr0926.ml/tx</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://wr0926.ml</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://github.com/wr20060926/wr20060926.github.io</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://wr0926.ml/suijimima</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://wr0926.ml/ewm</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://wr0926.ml/mp3</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://wr0926.ml/tfyx</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://wr0926.ml/message-board</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://wr0926.ml/</loc>
+ <priority>0.3</priority>
+ <lastmod>2020-05-24</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+</urlset>
