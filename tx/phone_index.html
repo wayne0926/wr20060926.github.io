@@ -4,47 +4,10 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
-    <title>WR-在线听写助手</title>
+    <title>在线听写助手_单词在线听写_免费听写-WR</title>
+    <meta name="keywords" content="在线听写,单词听写,免费听写" />
+    <meta name="description" content="免费好用的单词在线听写助手，由@wr20060926优化维护" />
     <meta charset="utf8">
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.beattext.js"></script>
-    <script src="js/easying.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            /*
-             *  参数详解:
-             *	upTime			上移的时间
-             *	downTime		下落的时间
-             *	beatHeight		上移高度
-             *	isAuth			是否自动
-             *	isRotate		是否旋转
-            */
-            $('p#beatText').beatText({ isAuth: true, isRotate: false, beatHeight: "0.4em", downTime: 50, upTime: 90 });
-            $('p#rotateText').beatText({ isAuth: false, isRotate: true });
-            $('p#autoText').beatText({ isAuth: true, beatHeight: "1em", isRotate: true, });
-            $('p#roloadText').beatText({ isAuth: true, beatHeight: "1em", isRotate: false, upTime: 100, downTime: 100 });
-            $('p#autoRotateText').beatText({
-                isAuth: true,
-                upTime: 700,
-                downTime: 700,
-                beatHeight: "3em",
-                isRotate: true
-            });
-
-        });
-        (function () {
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            }
-            else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-    </script>
     <style>
         body {
             font-family: helvetica, Microsoft Yahei, serif;
@@ -203,67 +166,82 @@
     <!------结果框------->
     <div class="display">
     </div>
-</body>
-<script type="text/javascript">
 
-    function pronance(e) {
-        var pn = document.getElementsByName("proun");
-        var p = 1;
-        for (n = 0; n < pn.length; n++) {
-            if (pn[n].checked) {
-                p = pn[n].value;
-            }
-        }
-        var audio = $("#audio");
-        audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(e).attr("class") + "&type=" + p);
-        audio.get(0).play();
-
-        $("#dictHcContent").attr("src", "http://dict.cn/apis/dict3.php?q=" + $(e).attr("class"));
-
-    }
-
-
-    //转换
-    let click = $("button#convert").click(function () {
-
-        $(".display").empty();
-        var words = $('#txtJSON').val().split("\n");
-        for (i = 0; i < words.length; i++) {
-            $(".display").append("<div class='word' ><a class='" + words[i] + "' onclick='pronance(this)'>" + words[i] + "</a></div>");
-        }
-
-    });
-
-    //听写
-    $("button#dictation").click(function () {
-        var childs = $(".display").find("div > a");
-        var pn = document.getElementsByName("proun");
-        var p = 1;
-        for (n = 0; n < pn.length; n++) {
-            if (pn[n].checked) {
-                p = pn[n].value;
-            }
-        }
-        var i = 0;
-        var t = document.getElementById("time").value;
-
-        function myloop() {
-            setTimeout(function () {
-                var audio = $("#audio");
-                audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(childs[i]).attr("class") + "&type=" + p);
-                audio.get(0).play();
-                i++;
-                if (i < childs.length) {
-                    myloop();
+    <script type="text/javascript">
+        function pronance(e) {
+            var pn = document.getElementsByName("proun");
+            var p = 1;
+            for (n = 0; n < pn.length; n++) {
+                if (pn[n].checked) {
+                    p = pn[n].value;
                 }
-            }, 1000 * t);
+            }
+            var audio = $("#audio");
+            audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(e).attr("class") + "&type=" + p);
+            audio.get(0).play();
+
+            $("#dictHcContent").attr("src", "http://dict.cn/apis/dict3.php?q=" + $(e).attr("class"));
+
         }
 
-        myloop();
+
+        //转换
+        let click = $("button#convert").click(function () {
+
+            $(".display").empty();
+            var words = $('#txtJSON').val().split("\n");
+            for (i = 0; i < words.length; i++) {
+                $(".display").append("<div class='word' ><a class='" + words[i] +
+                    "' onclick='pronance(this)'>" + words[i] + "</a></div>");
+            }
+
+        });
+
+        //听写
+        $("button#dictation").click(function () {
+            var childs = $(".display").find("div > a");
+            var pn = document.getElementsByName("proun");
+            var p = 1;
+            for (n = 0; n < pn.length; n++) {
+                if (pn[n].checked) {
+                    p = pn[n].value;
+                }
+            }
+            var i = 0;
+            var t = document.getElementById("time").value;
+
+            function myloop() {
+                setTimeout(function () {
+                    var audio = $("#audio");
+                    audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(childs[i]).attr(
+                        "class") + "&type=" + p);
+                    audio.get(0).play();
+                    i++;
+                    if (i < childs.length) {
+                        myloop();
+                    }
+                }, 1000 * t);
+            }
+
+            myloop();
 
 
-    });
-
-</script>
+        });
+    </script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+</body>
 
 </html>
