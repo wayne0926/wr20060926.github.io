@@ -4,6 +4,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <title>在线听写助手_单词在线听写_免费听写-WR</title>
     <meta name="keywords" content="在线听写,单词听写,在线听写助手" />
     <meta name="description" content="免费好用的单词在线听写助手，由@wr20060926优化维护" />
@@ -12,14 +13,15 @@
         body {
             font-family: helvetica, Microsoft Yahei, serif;
             font-size: 18px;
-            background-image: url("https://t1.picb.cc/uploads/2020/05/10/kEUOOW.jpg");
+            background-image: url("https://t1.picb.cc/uploads/2020/05/26/t2iyMy.jpg");
             background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
         .desc {
             margin: 1% 1% 0 1%;
             font-size: 20px;
-            color: #379099;
+            color: white;
         }
 
         button {
@@ -114,7 +116,6 @@
 
         .srkdx {
             width: 98%;
-            margin: auto;
         }
 
         .tishi {
@@ -123,16 +124,10 @@
     </style>
 </head>
 
-<body>
-    <a href="../">
-        <button type="button" class="typrcolor" onclick="window.location.href('../')"><b>返回首页</b></button>
-    </a>
-    <a href="/tx/old/">
-        <button type="button" class="typrcolor" onclick="window.location.href('/txt/old/')"><b>使用原版</b></button>
-    </a>
+<body onbeforeunload="return myfunction()">
     <div class="desc">
-        <p class="biaoti" id="autoText">使用说明：</p>
-        <p class="tishi" id="beatText">设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。</p>
+        <p class="animate__animated animate__fadeIn" style="font-size: 40px;">在线听写助手</p>
+        <p class="animate__animated animate__fadeIn">（设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词。）</p>
     </div>
 
     <!------输入框------->
@@ -167,7 +162,7 @@
     <div class="display">
     </div>
 
-    <script type="text/javascript">
+    <script>
         function pronance(e) {
             var pn = document.getElementsByName("proun");
             var p = 1;
@@ -227,9 +222,6 @@
 
 
         });
-    </script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <script type="text/javascript">
         (function () {
             var bp = document.createElement('script');
             var curProtocol = window.location.protocol.split(':')[0];
@@ -241,12 +233,13 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(bp, s);
         })();
-    </script>
-    <script>
         (function () {
             var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
             document.write('<script src="' + src + '" id="sozz"><\/script>');
         })();
+        function myfunction() {
+			return "确认离开当前页面吗？输入的单词将不会保存，全部丢失！";
+		}
     </script>
 </body>
 
