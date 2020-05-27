@@ -16,6 +16,7 @@
             background-image: url("https://t1.picb.cc/uploads/2020/05/26/t2iyMy.jpg");
             background-attachment: fixed;
             background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .desc {
@@ -58,7 +59,7 @@
             font-size: 20px;
             padding-left: 10px;
             font-family: "Microsoft Yahei", serif;
-            color: #92a5b0;
+            color: white;
             font-weight: bold;
             ;
         }
@@ -107,10 +108,10 @@
 
         .typrcolor {
             color: #fff;
-            background: #fb6259;
+            background: rgba(255, 255, 255, 0.5);
             font-family: "Microsoft Yahei", serif;
-            box-shadow: 0 10px 20px 0 #ec9c94;
-            border: 1.5px solid #ec9c94;
+            box-shadow: 0 10px 20px 0 white;
+            border: 1.5px solid white;
 
         }
 
@@ -133,7 +134,7 @@
     <!------输入框------->
     <div class="srkdx" style="border-radius:15px;">
         <label for="txtJSON"></label><textarea
-            style="background-color:#B5C8D3;color:#FFF5E8;box-shadow: 0 10px 20px 0 #D0E0E9;border:3.8px solid #D0E0E9;"
+            style="background-color:rgba(255, 255, 255, 0.8);color:white;box-shadow: 0 10px 20px 0 #D0E0E9;border:3.8px solid #D0E0E9;"
             class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
     </div>
 
@@ -237,9 +238,10 @@
             var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
             document.write('<script src="' + src + '" id="sozz"><\/script>');
         })();
+
         function myfunction() {
-			return "确认离开当前页面吗？输入的单词将不会保存，全部丢失！";
-		}
+            return "确认离开当前页面吗？输入的单词将不会保存，全部丢失！";
+        }
     </script>
 </body>
 
