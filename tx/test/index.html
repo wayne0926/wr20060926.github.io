@@ -158,43 +158,46 @@
             top: 0;
             left: 0;
             z-index: -1;
-        }
+		}
+		.bate-href {
+			color: white;
+		}
 	</style>
 </head>
 
 <body onbeforeunload="return myfunction()">
 	<div class="desc">
 		<b>在线听写助手</b><br>
-		<input type="button" value="如何使用？" onclick="MsgBox()" class="how-use" />
+		<input type="button" value="如何使用？" onclick="MsgBox()" class="how-use" title="使用前必看说明"/>
 	</div>
 
 	<!------输入框------->
 	<div style="float:left;/*background:#f00*/;width: 76%;">
-		<textarea class="form-control" id="txtJSON" placeholder="粘贴单词到这里" spellcheck="true"></textarea>
+		<textarea class="form-control" id="txtJSON" placeholder="粘贴单词到这里" spellcheck="true" title="在这里输入单词或粘贴单词，注意一行一词！"></textarea>
 	</div>
 
 	<!------按钮1------->
 	<div style="float:left;/*background:#0f0;*/margin-left:10px;">
 		<ul>
 			<li>
-				<label for="angle-from" class="settime"><b>时间间隔：</b></label>
-				<input type="number" id="time" value="5" min="1" class="input-time">
-				<div class="text-ps">&ensp;设置听写单词之间间隔时间</div>
+				<label for="angle-from" class="settime" title="设置听写单词之间间隔时间"><b>时间间隔：</b></label>
+				<input type="number" id="time" value="5" min="1" class="input-time" title="设置听写单词之间间隔时间">
+				<div class="text-ps" title="以“秒”为单位">&ensp;设置听写单词之间间隔时间</div>
 			</li>
 			<li>
-				<p class="p-music">&nbsp;<b>朗读发音</b><br>
-					<label for="angle-from" class="label-text"><b>英音</b></label>
-					<input type="radio" name="proun" value="1" class="input-set">
-					<label for="angle-from" class="label-text"><b>美音</b></label>
-					<input type="radio" name="proun" value="2" checked="checked" class="input-set">
+				<p class="p-music" title="选择发音习惯">&nbsp;<b>朗读发音</b><br>
+					<label for="angle-from" class="label-text" title="英式发音"><b>英音</b></label>
+					<input type="radio" name="proun" value="1" class="input-set" title="英式发音">
+					<label for="angle-from" class="label-text" title="美式发音"><b>美音</b></label>
+					<input type="radio" name="proun" value="2" checked="checked" class="input-set" title="美式发音">
 				</p>
 			</li>
 			<li>
-				<button id="convert" type="button" class="button-go">1、转换 </button>
+				<button id="convert" type="button" class="button-go" title="转换单词于下方">1、转换 </button>
 			</li>
 			<li>&ensp;</li>
 			<li>
-				<button id="dictation" type="button" class="button-go">2、听写 </button>
+				<button id="dictation" type="button" class="button-go" title="请先设置参数，然后开始听写">2、听写 </button>
 			</li>
 		</ul>
 	</div>
@@ -209,7 +212,7 @@
 		<iframe width="100%" height="100%" id="dictHcContent" style="border:none"></iframe>
 	</div>
 	<footer id="footer" style="text-align: center;">
-		<p class="copyright">&copy; Wei Ran 搭建<input type="button" value="关于工具" onclick="MsgBox2()" class="about" />
+		<p class="copyright">&copy; Wei Ran 搭建<input type="button" value="关于工具" onclick="MsgBox2()" class="about" title="关于工具"/><a href="https://wr0926.ml/tx/new/" target="_blank" title="相对BATE版本，可能更稳定" class="bate-href">稳定版</a>
 
 	</footer>
 	<canvas id="mineCanvas"></canvas>
@@ -295,7 +298,7 @@
 		{
 
 			alert(
-				"使用说明： \n 1、将单词按照一行一词粘贴到下面的输入框，点击“转换”，然后下方会出现转换后的单词； \n  \n ·单击每个单词，会发出读音，右下角会出现释义。 \n  \n ·设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词"
+				"使用说明： \n 1、将单词按照一行一词粘贴到下面的输入框。 \n 2、点击“转换”，然后下方会出现转换后的单词； \n  \n ·单击每个单词，会发出读音，右下角会出现释义。 \n  \n ·设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词"
 			); //弹出对话框
 
 		}
@@ -304,7 +307,7 @@
 
 		{
 
-			alert("本工具由Wei Ran 搭建运维，远古级源码来源于网络，本人大约用了累计8个小时维护、修复"); //弹出对话框
+			alert("本工具由Wei Ran 搭建运维，远古级源码来源于网络，本人大约用了累计8个小时维护、修复 \n  \n 反馈问题到：wr20060926@qq.com"); //弹出对话框
 
 		}
 
