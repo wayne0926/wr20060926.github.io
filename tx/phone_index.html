@@ -52,7 +52,7 @@
             margin: 26% 1% 1% 2%;
             color: white;
             font-family: 'Verdana';
-            text-shadow:2px 2px 5px black;
+            text-shadow: 2px 2px 5px black;
         }
 
         .meaning
@@ -157,39 +157,48 @@
         ul {
             word-break: break-all;
         }
-        li {
+
+        /* li {
             float:left;
-        }
+        } */
+
         .home-href {
             color: white;
             text-decoration: none;
+        }
+
+        .fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 
 <body onbeforeunload="return myfunction()">
-
+    <!-- 首页标题 -->
     <div class="desc">
         <ul>
-            <li class="animate__animated animate__fadeIn"><a href="https://wr0926.ml/tx/" class="home-href"><b>在线听写助手</b></a></li>
+            <li class="animate__animated animate__fadeIn"><a href="https://wr0926.ml/tx/"
+                    class="home-href"><b>在线听写助手</b></a></li>
             <li><input type="button" value="如何使用？" onclick="MsgBox()" class="how-use" /></li>
         </ul>
     </div>
-
     <!------输入框------->
     <div style="float:left;/*background:#f00*/;width: 97%;">
         <textarea class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
     </div>
-
     <!------按钮1------->
-    <div style="float:left;/*background:#0f0;*/margin-left:10px;">
+    <div style="margin-left:10px;">
         <ul>
             <li>
+                <!-- 时间间隔组 -->
                 <label for="angle-from" class="settime"><b>时间间隔：</b></label>
                 <input type="number" id="time" value="5" min="1" class="input-time">
                 <div class="text-ps">&ensp;设置听写单词之间间隔时间</div>
             </li>
             <li>
+                <!-- 朗读发音组 -->
                 <p class="p-music">&nbsp;<b>朗读发音</b><br>
                     <label for="angle-from" class="label-text"><b>英音</b></label>
                     <input type="radio" name="proun" value="1" class="input-set">
@@ -198,22 +207,25 @@
                 </p>
             </li>
             <li>
+                <!-- 转换按钮 -->
                 <button id="convert" type="button" class="button-go">1、转换 </button>
             </li>
+            <li>&ensp;</li>
             <li>
+                <!-- 听写按钮 -->
                 <button id="dictation" type="button" class="button-go">2、听写 </button>
             </li>
         </ul>
     </div>
     <br>
     <audio id="audio" style="display:none"></audio>
-
+    <br><br>
     <!------结果框------->
     <div class="display">
     </div>
-    <footer id="footer" style="text-align: center;">
+    <!-- 底部信息 -->
+    <footer id="footer" style="text-align: center;"><br><br><br>
         <p class="copyright">Wei Ran 搭建<input type="button" value="关于工具" onclick="MsgBox2()" class="about" />
-
     </footer>
     <script>
         function pronance(e) {
@@ -277,7 +289,7 @@
 
 
         });
-
+        //百度站长
         (function () {
             var bp = document.createElement('script');
             var curProtocol = window.location.protocol.split(':')[0];
@@ -289,8 +301,8 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(bp, s);
         })();
-        
 
+        //使用说明
         function MsgBox() //声明标识符
 
         {
@@ -300,7 +312,7 @@
             ); //弹出对话框
 
         }
-
+        //关于工具
         function MsgBox2() //声明标识符
 
         {
@@ -308,16 +320,37 @@
             alert("本工具由Wei Ran 搭建运维，远古级源码来源于网络，本人大约用了累计8个小时维护、修复"); //弹出对话框
 
         }
-
+        //离开提示
         function myfunction() {
             return "确认离开当前页面吗？输入的单词将不会保存，全部丢失！";
         }
     </script>
     <script>
+        //360站长
         (function () {
             var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
             document.write('<script src="' + src + '" id="sozz"><\/script>');
         })();
+    </script>
+    <script>
+        //底部信息
+        $(function () {
+            function footerPosition() {
+                $("footer").removeClass("fixed-bottom");
+                //网页正文全文高度
+                var contentHeight = document.body.scrollHeight,
+                    //可视窗口高度，不包括浏览器顶部工具栏
+                    winHeight = window.innerHeight;
+                if (!(contentHeight > winHeight)) {
+                    //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                    $("footer").addClass("fixed-bottom");
+                } else {
+                    $("footer").removeClass("fixed-bottom");
+                }
+            }
+            footerPosition();
+            $(window).resize(footerPosition);
+        });
     </script>
 </body>
 
