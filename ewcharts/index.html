@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./plugin/ewChart.min.css">
+    <link href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" rel="icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <title>在线可视化图表</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+<script src="./plugin/ewChart.min.js"></script>
+<script src="./plugin/debugger.min.js"></script>
+<script>
+    new ewCharts({
+        el: "#demo",
+        color: ["#07bc85", "dd2345", "#346578", "#ff8654", "#998213"],
+        data: {
+            X: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'],
+            Y: [{
+                    name: '直接访问',
+                    data: [320, 332, 301, 334, 390, 330, 320]
+                },
+                {
+                    name: '邮件营销',
+                    data: [120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name: '联盟广告',
+                    data: [220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name: '视频广告',
+                    data: [150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name: '搜索引擎',
+                    data: [862, 1018, 964, 1026, 1679, 1600, 1570]
+                },
+            ],
+            keyName: ['name', 'data']
+        }
+    });
+</script>
+
+</html>
