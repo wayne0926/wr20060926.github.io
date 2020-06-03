@@ -201,14 +201,22 @@
 			bottom: 0;
 			width: 100%;
 		}
-		.yincang{
-			width: 100px;
+
+		.xianshi {
+			display: none;
+			width: 200px;
 			height: 50px;
-            font-size: 15px;
+			font-size: 15px;
 			border-radius: 50px;
 			background-color: rgba(255, 255, 255, 0.5);
 			border: 5px solid rgba(255, 255, 255, 0.5);
 			color: white;
+			text-align: center;
+			transition: width 0.5s;
+			margin: 0% 0% 0% -485%;
+		}
+		.xianshi:hover {
+			width: 210px;
 		}
 	</style>
 </head>
@@ -242,24 +250,26 @@
 				</p>
 			</li>
 			<li>
-				<button id="convert" type="button" class="button-go" title="转换单词于下方">1、转换 </button>
+				<button id="convert" type="button" class="button-go" title="转换单词于下方" onclick="zhuanhuan()">1、转换
+				</button>
 			</li>
 			<li>&ensp;</li>
 			<li>
-				<button id="dictation" type="button" class="button-go" title="请先设置参数，然后开始听写">2、听写 </button>
+				<button id="dictation" type="button" class="button-go" title="请先设置参数，然后开始听写" onclick="tingxie()">2、听写
+				</button>
 			</li>
+			<li>&ensp;</li>
 			<li>
-				<button type="button" onclick="document.getElementById('display').style.display = 'none';document.getElementById('good').style.display = 'block';" class="yincang">隐藏单词</button>
-				<button type="button" onclick="document.getElementById('display').style.display = 'block';document.getElementById('good').style.display = 'none'" class="yincang">显示单词</button>
+				<button type="button" onclick="xianshi()" class="xianshi" id="xianshi-1">显示单词（听写开始后使用）</button>
 			</li>
 		</ul>
 	</div>
 	<audio id="audio" style="display:none"></audio>
 
 	<!------结果框------->
-	<p style="display: none;margin: 30% 1% 1% 4%;color: white;" id="good"><b>输出单词已被隐藏！</b></p>
+	<p style="display: none;margin: 30% 1% 1% 4%;color: white;" id="good"><b>输出单词已被自动隐藏，如需显示请点击“显示单词”！</b></p>
 	<div class="display" id="display">
-		
+
 	</div>
 
 	<div class="meaning">
@@ -398,6 +408,25 @@
 			footerPosition();
 			$(window).resize(footerPosition);
 		});
+	</script>
+	<script>
+		function zhuanhuan() /* 转换按钮触发 */ {
+			document.getElementById('xianshi-1').style.display = 'block';
+		}
+
+		function tingxie() /* 听写按钮触发 */ {
+			document.getElementById("txtJSON").value = "";
+			document.getElementById('display').style.display = 'none';
+			document.getElementById('good').style.display = 'block';
+			document.getElementById("xianshi-1").innerHTML = "<b>显示单词</b>";
+			document.getElementById("xianshi-1").style.fontFamily = "Microsoft Yahei";
+			document.getElementById("xianshi-1").style.fontSize = "25px";
+		}
+
+		function xianshi() /* 显示单词按钮触发 */ {
+			document.getElementById('display').style.display = 'block';
+			document.getElementById('good').style.display = 'none';
+		}
 	</script>
 </body>
 
