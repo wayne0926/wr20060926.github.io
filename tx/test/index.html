@@ -434,29 +434,43 @@
 		function xianshi() /* 显示单词按钮触发 */ {
 			document.getElementById('display').style.display = 'block';
 			document.getElementById('good').style.display = 'none';
-			document.getElementById("xianshi-1").innerHTML = "隐藏单词(5)";
+			document.getElementById("xianshi-1").innerHTML = "隐藏单词(10)";
 			//隐藏单词倒计时
 			setTimeout(function () {
-				document.getElementById("xianshi-1").innerHTML = "隐藏单词(4)";
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(9)";
 			}, 1000);
-
 			setTimeout(function () {
-				document.getElementById("xianshi-1").innerHTML = "隐藏单词(3)";
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(8)";
 			}, 2000);
 
 			setTimeout(function () {
-				document.getElementById("xianshi-1").innerHTML = "隐藏单词(2)";
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(7)";
 			}, 3000);
 
 			setTimeout(function () {
-				document.getElementById("xianshi-1").innerHTML = "隐藏单词(1)";
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(6)";
 			}, 4000);
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(5)";
+			}, 5000);
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(4)";
+			}, 6000);
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(3)";
+			}, 7000);
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(2)";
+			}, 8000);
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(1)";
+			}, 9000);
 			//执行隐藏单词
 			setTimeout(function () {
 				document.getElementById('display').style.display = 'none';
 				document.getElementById('good').style.display = 'block';
 				document.getElementById("xianshi-1").innerHTML = "显示单词";
-			}, 5000);
+			}, 10000);
 		}
 	</script>
 </body>
