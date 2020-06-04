@@ -215,6 +215,7 @@
 			transition: width 0.5s;
 			margin: 0% 0% 0% -485%;
 		}
+
 		.xianshi:hover {
 			width: 210px;
 		}
@@ -227,14 +228,13 @@
 		<input type="button" value="如何使用？" onclick="MsgBox()" class="how-use" title="使用前必看说明" />
 	</div>
 
-	<!------输入框------->
+	<!-- 输入框 -->
 	<div style="float:left;/*background:#f00*/;width: 76%;">
 		<textarea class="form-control" id="txtJSON" placeholder="粘贴/输入单词到这里
-(一行一词，建议输入完后复制以防万一)" spellcheck="true"
-			title="在这里输入单词或粘贴单词，注意一行一词！"></textarea>
+(一行一词，建议输入完后复制以防万一)" spellcheck="true" title="在这里输入单词或粘贴单词，注意一行一词！"></textarea>
 	</div>
 
-	<!------按钮1------->
+	<!-- 按钮1 -->
 	<div style="float:left;/*background:#0f0;*/margin-left:10px;">
 		<ul>
 			<li>
@@ -261,13 +261,13 @@
 			</li>
 			<li>&ensp;</li>
 			<li>
-				<button type="button" onclick="xianshi()" class="xianshi" id="xianshi-1">显示单词（听写开始后使用）</button>
+				<button type="button" onclick="xianshi()" class="xianshi" id="xianshi-1">显示单词(听写开始后使用)</button>
 			</li>
 		</ul>
 	</div>
 	<audio id="audio" style="display:none"></audio>
 
-	<!------结果框------->
+	<!-- 结果框 -->
 	<p style="display: none;margin: 30% 1% 1% 4%;color: white;" id="good"><b>输出单词已被自动隐藏，如需显示请点击“显示单词”！</b></p>
 	<div class="display" id="display">
 
@@ -359,7 +359,7 @@
 			s.parentNode.insertBefore(bp, s);
 		})();
 		if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) { //跳到手机端
-			window.location = "https://wr0926.ml/tx/phone_index.html";
+			window.location = "../phone_index.html";
 		}
 
 		function MsgBox() //声明标识符
@@ -412,7 +412,11 @@
 	</script>
 	<script>
 		function zhuanhuan() /* 转换按钮触发 */ {
+			document.getElementById("xianshi-1").innerHTML = "显示单词(听写开始后使用)"
 			document.getElementById('xianshi-1').style.display = 'block';
+			document.getElementById("xianshi-1").setAttribute("disabled", true); //设置不可点击
+			document.getElementById("xianshi-1").style.backgroundColor = '#555555'; //设置背景色
+			document.getElementById("xianshi-1").style.fontSize = "15px";
 		}
 
 		function tingxie() /* 听写按钮触发 */ {
@@ -422,11 +426,37 @@
 			document.getElementById("xianshi-1").innerHTML = "<b>显示单词</b>";
 			document.getElementById("xianshi-1").style.fontFamily = "Microsoft Yahei";
 			document.getElementById("xianshi-1").style.fontSize = "25px";
+			document.getElementById("xianshi-1").removeAttribute("disabled"); //去掉不可点击			
+			document.getElementById("xianshi-1").style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; //设置背景色		
+
 		}
 
 		function xianshi() /* 显示单词按钮触发 */ {
 			document.getElementById('display').style.display = 'block';
 			document.getElementById('good').style.display = 'none';
+			document.getElementById("xianshi-1").innerHTML = "隐藏单词(5)";
+			//隐藏单词倒计时
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(4)";
+			}, 1000);
+
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(3)";
+			}, 2000);
+
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(2)";
+			}, 3000);
+
+			setTimeout(function () {
+				document.getElementById("xianshi-1").innerHTML = "隐藏单词(1)";
+			}, 4000);
+			//执行隐藏单词
+			setTimeout(function () {
+				document.getElementById('display').style.display = 'none';
+				document.getElementById('good').style.display = 'block';
+				document.getElementById("xianshi-1").innerHTML = "显示单词";
+			}, 5000);
 		}
 	</script>
 </body>
