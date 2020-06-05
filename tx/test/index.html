@@ -437,6 +437,7 @@
 
 		function xianshi() /* 显示单词按钮触发 */ {
 			document.getElementById("xianshi-1").setAttribute("disabled", true); //设置不可点击
+			document.getElementById("word1").removeAttribute("onclick") //设置单词不可点击
 			document.getElementById('display').style.display = 'block'; //显示输出单词
 			document.getElementById('good').style.display = 'none'; //隐藏“隐藏提示”
 			//隐藏单词倒计时
