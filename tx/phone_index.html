@@ -19,6 +19,10 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: black;
+            overflow: auto;
         }
 
         .desc {
@@ -90,6 +94,8 @@
             {
             font-size: 30px;
             color: rgba(255, 255, 255, 0.8);
+            margin-left: 1%;
+            /* float: left; */
         }
 
         .input-time {
@@ -107,6 +113,7 @@
         .p-music {
             font-size: 30px;
             color: rgba(255, 255, 255, 0.8);
+            margin-left: 1%;
         }
 
         .label-text {
@@ -136,6 +143,7 @@
             font-size: 23px;
             color: white;
             font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         .text-ps {
@@ -162,6 +170,10 @@
             float:left;
         } */
 
+        .bate-href {
+            color: white;
+        }
+
         .home-href {
             color: white;
             text-decoration: none;
@@ -171,6 +183,21 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+
+        .xianshi {
+            display: none;
+            width: 170px;
+            height: 49px;
+            font-size: 15px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 5px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            text-align: center;
+            transition: width 0.5s;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            /* margin: 0% 0% 0% -485%; */
         }
     </style>
 </head>
@@ -184,17 +211,17 @@
             <li><input type="button" value="如何使用？" onclick="MsgBox()" class="how-use" /></li>
         </ul>
     </div>
-    <!------输入框------->
+    <!-- 输入框 -->
     <div style="float:left;/*background:#f00*/;width: 97%;">
         <textarea class="form-control" id="txtJSON" placeholder="粘贴单词到这里"></textarea>
     </div>
-    <!------按钮1------->
+    <!-- 设置 -->
     <div style="margin-left:10px;">
         <ul>
             <li>
                 <!-- 时间间隔组 -->
                 <label for="angle-from" class="settime"><b>时间间隔：</b></label>
-                <input type="number" id="time" value="5" min="1" class="input-time">
+                <input type="number" id="time" value="10" min="1" class="input-time"><br>
                 <div class="text-ps">&ensp;设置听写单词之间间隔时间</div>
             </li>
             <li>
@@ -208,24 +235,36 @@
             </li>
             <li>
                 <!-- 转换按钮 -->
-                <button id="convert" type="button" class="button-go">1、转换 </button>
+                <button id="convert" type="button" class="button-go" onclick="zhuanhuan()">1、转换 </button>
             </li>
             <li>&ensp;</li>
             <li>
                 <!-- 听写按钮 -->
-                <button id="dictation" type="button" class="button-go">2、听写 </button>
+                <button id="dictation" type="button" class="button-go" onclick="tingxie()">2、听写 </button>
+            </li>
+            <li>&ensp;</li>
+            <li>
+                <!-- 显示（隐藏）按钮 -->
+                <button type="button" onclick="xianshi()" class="xianshi" id="xianshi-1">显示单词(听写开始后使用)</button>
             </li>
         </ul>
     </div>
     <br>
     <audio id="audio" style="display:none"></audio>
     <br><br>
-    <!------结果框------->
-    <div class="display">
+    <!-- 隐藏提示框 -->
+    <p style="display: none;margin: 2px auto;color: white;" id="good">
+        <b>输出单词已被自动隐藏，如需显示请点击“显示单词”！</b>
+    </p>
+    <!--结果框-->
+    <div class="display" id="display">
     </div>
     <!-- 底部信息 -->
     <footer id="footer" style="text-align: center;"><br><br><br>
-        <p class="copyright">Wei Ran 搭建<input type="button" value="关于工具" onclick="MsgBox2()" class="about" />
+        <p class="copyright">&copy; Wei Ran 搭建
+            <input type="button" value="关于工具" onclick="MsgBox2()" class="about" />
+            <a href="./new/" target="_top" title="电脑访问最佳" class="bate-href">电脑版</a>
+        </p>
     </footer>
     <script>
         function pronance(e) {
@@ -351,6 +390,99 @@
             footerPosition();
             $(window).resize(footerPosition);
         });
+    </script>
+    <script>
+        function zhuanhuan() /* 转换按钮触发 */ {
+            document.getElementById("xianshi-1").innerHTML = "显示单词(听写开始后使用)"; //更改名称
+            document.getElementById('xianshi-1').style.display = 'block'; //调整为显示按钮
+            document.getElementById("xianshi-1").setAttribute("disabled", true); //设置不可点击
+            document.getElementById("xianshi-1").style.backgroundColor = '#555555'; //设置背景色
+            document.getElementById("xianshi-1").style.fontSize = "15px"; //设置不显目的字体
+            document.getElementById("good").style.display = "none";
+            document.getElementById("display").style.display = "block"
+        }
+
+        function tingxie() /* 听写按钮触发 */ {
+            document.getElementById("txtJSON").value = ""; //清除输入框内容
+            document.getElementById('display').style.display = 'none'; //隐藏输出单词
+            document.getElementById('good').style.display = 'block'; //显示提示
+            document.getElementById("xianshi-1").innerHTML = "<b>显示单词</b>"; //更改按钮名称
+            document.getElementById("xianshi-1").style.fontFamily = "Microsoft Yahei"; //调整按钮字体
+            document.getElementById("xianshi-1").style.fontSize = "23px"; //设置显目的字体
+            document.getElementById("xianshi-1").removeAttribute("disabled"); //去掉不可点击			
+            document.getElementById("xianshi-1").style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; //设置背景色		
+
+        }
+
+        function xianshi() /* 显示单词按钮触发 */ {
+            document.getElementById("xianshi-1").setAttribute("disabled", true); //设置不可点击
+            document.getElementById('display').style.display = 'block'; //显示输出单词
+            document.getElementById('good').style.display = 'none'; //隐藏“隐藏提示”
+            //隐藏单词倒计时
+            document.getElementById("xianshi-1").innerHTML = "隐藏单词(10)"; //10
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(9)"; //9
+            }, 1000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(8)"; //8
+            }, 2000);
+
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(7)"; //7
+            }, 3000);
+
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(6)"; //6
+            }, 4000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(5)"; //5
+            }, 5000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(4)"; //4
+            }, 6000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(3)"; //3
+            }, 7000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(2)"; //2
+            }, 8000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "隐藏单词(1)"; //1
+            }, 9000);
+            //执行隐藏单词倒计时结束
+            //执行隐藏单词
+            setTimeout(function () {
+                document.getElementById('display').style.display = 'none'; //隐藏输出单词
+                document.getElementById('good').style.display = 'block'; //显示提示框
+                document.getElementById("good").innerHTML = "显示单词时间（10秒）结束，如需再次显示，请点击“显示单词”"; //更改隐藏提示内容
+                /* 设置按钮不可点击颜色 */
+                document.getElementById("xianshi-1").style.backgroundColor = '#555555'; //设置背景色
+                document.getElementById("xianshi-1").innerHTML = "请先思考!(5)"; //更改按钮名称
+            }, 10000);
+            //执行隐藏单词结束
+            //开始倒计时
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "请先思考!(4)"; //4
+            }, 11000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "请先思考!(3)"; //3
+            }, 12000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "请先思考!(2)"; //2
+            }, 13000);
+            setTimeout(function () {
+                document.getElementById("xianshi-1").innerHTML = "请先思考!(1)"; //1
+            }, 14000);
+            //倒计时结束
+            setTimeout(function () {
+                /* 设置按钮可以点击（5秒后） */
+                document.getElementById("xianshi-1").removeAttribute("disabled"); //去掉不可点击			
+                document.getElementById("xianshi-1").style.backgroundColor =
+                    'rgba(255, 255, 255, 0.5)'; //设置背景色	
+                document.getElementById("xianshi-1").innerHTML = "显示单词"; //更改回按钮名称
+            }, 15000);
+
+        }
     </script>
 </body>
 
