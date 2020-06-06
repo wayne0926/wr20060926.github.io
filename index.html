@@ -51,22 +51,22 @@
             <!-- Intro -->
             <article id="app">
                 <h2 class="major">程序</h2>
-                <a href="tx/">
+                <a href="./tx/">
                     <button onclick="window.location.href('tx/')">在线听写</button>
                 </a>
-                <a href="suijimima/">
+                <a href="./suijimima/">
                     <button onclick="window.location.href('suijimima/')">随机密码生成器</button>
                 </a>
-                <a href="ewm/">
+                <a href="./ewm/">
                     <button onclick="window.location.href('ewm/')">二维码解析生成</button>
                 </a>
-                <a href="mp3/">
+                <a href="./mp3/">
                     <button onclick="window.location.href('mp3/')">音频可视化</button>
                 </a>
-                <a href="tfyx/">
+                <a href="./tfyx/">
                     <button onclick="window.location.href('tfyx/')">拖放游戏</button>
                 </a>
-                <a href="ewcharts/">
+                <a href="./ewcharts/">
                     <button onclick="window.location.href('ewcharts/')">在线可视化图表</button>
                 </a>
             </article>
@@ -137,39 +137,20 @@
             document.write('<script src="' + src + '" id="sozz"><\/script>');
         })();
     </script>
+    <div id="tp-weather-widget"></div>
     <script>
-        (function (a, h, g, f, e, d, c, b) {
-            b = function () {
-                d = h.createElement(g);
-                c = h.getElementsByTagName(g)[0];
-                d.src = e;
-                d.charset = "utf-8";
-                d.async = 1;
-                c.parentNode.insertBefore(d, c)
-            };
-            a["SeniverseWeatherWidgetObject"] = f;
-            a[f] || (a[f] = function () {
-                (a[f].q = a[f].q || []).push(arguments)
-            });
-            a[f].l = +new Date();
-            if (a.attachEvent) {
-                a.attachEvent("onload", b)
-            } else {
-                a.addEventListener("load", b, false)
-            }
-        }(window, document, "script", "SeniverseWeatherWidget", "//cdn.sencdn.com/widget2/static/js/bundle.js?t=" +
-            parseInt((new Date().getTime() / 100000000).toString(), 10)));
-        window.SeniverseWeatherWidget('show', {
-            flavor: "bubble",
-            location: "WX4FBXXFKE4F",
-            geolocation: true,
-            language: "zh-Hans",
-            unit: "c",
-            theme: "auto",
-            token: "d038f2e1-a134-457a-9fff-bd7d178c7692",
-            hover: "enabled",
-            container: "tp-weather-widget"
-        })
+      (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+      window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WX4FBXXFKE4F",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "auto",
+        token: "d038f2e1-a134-457a-9fff-bd7d178c7692",
+        hover: "enabled",
+        container: "tp-weather-widget"
+      })
     </script>
 </body>
 
