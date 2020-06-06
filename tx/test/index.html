@@ -80,6 +80,7 @@
 			box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.5);
 			transition: all 1s ease-out;
 			padding:5px;
+			resize:none;
 		}
 
 		#txtJSON:hover {
@@ -253,11 +254,12 @@
 			width: 210px;
 		}
 		.fixed-bottom {
-			background: rgba(1, 1, 1, 0.15);
+			background: rgba(1, 1, 1, 0.25);
+			border-radius: 100px 100px 0px 0px;
 		}
-		.ver{
+		/* .ver{
 			color: #f2f2f2;
-		}
+		} */
 	</style>
 </head>
 
@@ -321,14 +323,21 @@
 			<input type="button" value="关于工具" onclick="MsgBox2()" class="about" title="关于工具" />
 			<a href="../new/" target="_top" title="相对BATE版本，可能更稳定" class="bate-href">稳定版</a>
 			<a href="../phone_index.html" target="_top" title="手机访问最佳" class="bate-href">手机版</a>
-			<p class="ver"><span>版本：5.3</span>&ensp;&ensp;<span>最近维护时间：2022/6/6/20:25</span></p>
 		</p>
 	</footer>
 	<!-- 点击特效 -->
 	<canvas id="mineCanvas"></canvas>
 	<script>
 		//浏览器控制台打印信息
-		console.log("如果使用中出现问题，请发邮件到：wr20060926@qq.com 反馈，谢谢支持！ \n 您的支持就是我最大的动力！");
+		console.log("如果使用中出现问题，请发邮件到：wr20060926@qq.com 反馈，谢谢支持！ \n您的支持就是我最大的动力！");
+	</script>
+	<script>
+		//浏览器控制台打印信息
+		console.log("%c版本：5.31","color:red");
+	</script>
+	<script>
+		//浏览器控制台打印信息
+		console.log("%c最近维护时间：2020，6，6，22:00","color:red");
 	</script>
 	<script>
 		function pronance(e) {
@@ -409,13 +418,12 @@
 		function MsgBox() //声明标识符
 		{
 			alert(
-				"使用说明： \n 1、将单词按照一行一词粘贴到下面的输入框。 \n 2、点击“转换”，然后下方会出现转换后的单词； \n  \n ·单击每个单词，会发出读音，右下角会出现释义。 \n  \n ·设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词"
-			); //弹出对话框
+				"使用说明： \n1、将单词按照一行一词粘贴到下面的输入框。 \n2、点击“转换”，然后下方会出现转换后的单词； \n\n·单击每个单词，会发出读音，右下角会出现释义。 \n\n·设定间隔时间，点击“听写”，即可按时间间隔，依次读出每个单词"); //弹出对话框
 		}
 
 		function MsgBox2() //声明标识符
 		{
-			alert("本工具由Wei Ran 搭建运维，远古级源码来源于网络，本人大约用了累计8个小时维护、修复 \n  \n 反馈问题到：wr20060926@qq.com \n 您的支持就是我的动力"); //弹出对话框
+			alert("本工具由Wei Ran 搭建运维，远古级源码来源于网络，本人大约用了累计8个小时维护、修复 \n\n反馈问题到：wr20060926@qq.com \n您的支持就是我的动力 \n\n版本：5.31           最近维护时间：2020/6/6/22:00"); //弹出对话框
 		}
 
 		function myfunction() {
