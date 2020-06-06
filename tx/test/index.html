@@ -9,26 +9,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
 	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<!--[if IE]>
+		<style>
+			body {
+			    background-image: url("https://blog.mrabit.com/bing/today");
+			}
+		</style>
+	<![endif]-->
 	<style>
 		body {
 			font-family: helvetica, Microsoft Yahei;
 			font-size: 18px;
-			background-image: url("https://t1.picb.cc/uploads/2020/05/17/kYLgET.jpg");
-			background-attachment: fixed;
+			/* background-image: url("https://blog.mrabit.com/bing/today"); */
 			background-repeat: no-repeat;
 			background-size: cover;
 			width: 1800px;
 			overflow-x: hidden;
-			background-color: black;
+			background-color: gray;
 			background-position: center;
 			background-attachment: fixed;
-			overflow: auto;
+			overflow-x: hidden;
+			height: 100%;
+		}
+
+		body::before {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: transparent url(https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN) center center no-repeat;
+			filter: blur(5px);
+			z-index: -1;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			margin: 0 0;
+			-webkit-filter: blur(3px);
+			-moz-filter: blur(3px);
+			-ms-filter: blur(3px);
+			-o-filter: blur(3px);
 		}
 
 		.desc {
 			margin: 3% 1% 0% 3%;
 			font-size: 63px;
-			color: white;
+			color: #f2f2f2;
 		}
 
 		button {
@@ -41,13 +69,13 @@
 			height: 400px;
 			width: 96%;
 			margin: 1% 1% 1% 3%;
-			border-color: white;
+			border-color: #f2f2f2;
 			background-color: rgba(255, 255, 255, 0.5);
 			line-height: 150%;
 			border-radius: 18px;
 			font-family: 'Verdana';
 			font-size: 17px;
-			color: white;
+			color: #f2f2f2;
 			font-weight: bold;
 			box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.5);
 			transition: all 1s ease-out;
@@ -59,7 +87,7 @@
 
 		.display {
 			margin: 30% 1% 1% 2%;
-			color: white;
+			color: #f2f2f2;
 			font-family: 'Verdana';
 		}
 
@@ -97,7 +125,7 @@
 		/*时间间隔设置框*/
 			{
 			font-size: 40px;
-			color: rgba(255, 255, 255, 0.8);
+			color: rgba(242, 242, 242, 0.8);
 		}
 
 		.input-time {
@@ -109,13 +137,14 @@
 			padding: 9px 10px 0px 9px;
 			text-align: center;
 			font-size: 20px;
-			color: #ccc;
+			color: black;
 			transition: width 0.3s;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 		}
 
 		.p-music {
 			font-size: 40px;
-			color: rgba(255, 255, 255, 0.8);
+			color: rgba(242, 242, 242, 0.8);
 		}
 
 		.label-text {
@@ -131,7 +160,7 @@
 
 		.how-use {
 			background-color: rgba(255, 255, 255, 0);
-			color: white;
+			color: #f2f2f2;
 			border: none;
 			font-size: 20px;
 			text-decoration: underline;
@@ -146,10 +175,10 @@
 			width: 200px;
 			height: 70px;
 			border-radius: 50px;
-			border: 5px solid rgba(255, 255, 255, 0.5);
+			border: 5px solid rgba(242, 242, 242, 0.5);
 			background-color: rgba(255, 255, 255, 0.5);
 			font-size: 30px;
-			color: white;
+			color: #f2f2f2;
 			font-weight: bold;
 			transition: width 0.5s;
 		}
@@ -159,7 +188,7 @@
 		}
 
 		.text-ps {
-			color: white;
+			color: #f2f2f2;
 		}
 
 		.copyright {
@@ -195,7 +224,7 @@
 		}
 
 		.home-href {
-			color: white;
+			color: #f2f2f2;
 			text-decoration: none;
 		}
 
@@ -212,8 +241,8 @@
 			font-size: 15px;
 			border-radius: 50px;
 			background-color: rgba(255, 255, 255, 0.5);
-			border: 5px solid rgba(255, 255, 255, 0.5);
-			color: white;
+			border: 5px solid rgba(242, 242, 242, 0.5);
+			color: #f2f2f2;
 			text-align: center;
 			transition: width 0.5s;
 			margin: 0% 0% 0% -485%;
@@ -270,7 +299,7 @@
 	</div>
 	<audio id="audio" style="display:none"></audio>
 	<!-- 隐藏提示 -->
-	<p style="display: none;margin: 30% 1% 1% 4%;color: white;" id="good">
+	<p style="display: none;margin: 30% 1% 1% 4%;color: #f2f2f2;" id="good">
 		<b>输出单词已被自动隐藏，如需显示请点击“显示单词”！</b>
 	</p>
 	<!-- 结果框 -->
@@ -437,7 +466,6 @@
 
 		function xianshi() /* 显示单词按钮触发 */ {
 			document.getElementById("xianshi-1").setAttribute("disabled", true); //设置不可点击
-			document.getElementById("word1").removeAttribute("onclick") //设置单词不可点击
 			document.getElementById('display').style.display = 'block'; //显示输出单词
 			document.getElementById('good').style.display = 'none'; //隐藏“隐藏提示”
 			//隐藏单词倒计时
