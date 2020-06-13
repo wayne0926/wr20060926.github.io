@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>月考倒计时-WR</title>
+    <link rel="icon" href="https://t1.picb.cc/uploads/2020/04/22/k9c8Fg.png" type="image/x-icon">
+    <script>
+        function countTime() {
+            //获取当前时间
+            var date = new Date();
+            var now = date.getTime();
+            //设置截止时间
+            var str = "2020/6/15 08:30:00";
+            var endDate = new Date(str);
+            var end = endDate.getTime();
+
+            //时间差
+            var leftTime = end - now;
+            //定义变量 d,h,m,s保存倒计时的时间
+            var d, h, m, s;
+            if (leftTime >= 0) {
+                d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
+                h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
+                m = Math.floor(leftTime / 1000 / 60 % 60);
+                s = Math.floor(leftTime / 1000 % 60);
+            }
+            //将倒计时赋值到div中
+            document.getElementById("_d").innerHTML = "<b>" + d + "天，" + "</b>";
+            document.getElementById("_h").innerHTML = "<b>" + h + "时，" + "</b>";
+            document.getElementById("_m").innerHTML = "<b>" + m + "分，" + "</b>";
+            document.getElementById("_s").innerHTML = "<b>" + s + "秒" + "</b>";
+            //递归每秒调用countTime方法，显示动态时间效果
+            setTimeout(countTime, 1000);
+        }
+        function tip() {
+            alert("加油努力复习哟 \n \n(＾Ｕ＾)ノ~ＹＯ");
+        }
+    </script>
+    <style>
+        body {
+            background-color: #17171d;
+        }
+
+        .time {
+            background-color: #121217;
+            text-align: center;
+            margin: 5% auto;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 700px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #845dde;
+        }
+
+        .desc {
+            color: #ffffff;
+            font-size: 70px;
+            text-align: center;
+            margin: 145px 0 0 0;
+        }
+
+        .desc2 {
+            color: #aaaab3;
+            font-size: 30px;
+            margin-top: 3px;
+        }
+
+        #_s {
+            opacity: 0.4;
+        }
+       
+        #_m {
+            opacity: 0.6;
+        }
+
+        #_h {
+            opacity: 0.8;
+        }
+        #_d {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body onload="countTime()">
+    <div class="desc">
+        <span><b>月考倒计时</b></span><br>
+        <span class="desc2"><b>近期月考倒计时</b></span>
+    </div>
+    <div class="time">
+        <span id="_d" onclick="tip()">00</span>
+        <span id="_h" onclick="tip()">00</span>
+        <span id="_m" onclick="tip()">00</span>
+        <span id="_s" onclick="tip()">00</span>
+    </div>
+</body>
+
+</html>
