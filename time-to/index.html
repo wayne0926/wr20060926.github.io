@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>月考倒计时-WR</title>
+    <title>人生倒计时-WR</title>
     <link rel="icon" href="../images/icon.png" type="image/x-icon">
     <script>
         function countTime() {
@@ -41,7 +41,8 @@
                 s = Math.floor(leftTime / 1000 % 60);
             }
             if (leftTime < 0) {
-                document.getElementById("yuekao").innerHTML = "距离月考开始已过去"
+                document.getElementById("yuekao").innerHTML = "距近期考试已过去"
+                document.getElementById("desc2").innerHTML = "已过去"
                 d = Math.floor(-leftTime / 1000 / 60 / 60 / 24);
                 h = Math.floor(-leftTime / 1000 / 60 / 60 % 24);
                 m = Math.floor(-leftTime / 1000 / 60 % 60);
@@ -282,8 +283,8 @@
 
 <body onload="countTime()" id="body">
     <div class="desc">
-        <b><span id="yuekao"><b>月考倒计时</b></span><br>
-            <span class="desc2" id="desc2"><b>近期月考倒计时</b></span>
+        <b><span id="yuekao"><b>近期考试倒计时</b></span><br>
+            <span class="desc2" id="desc2"><b>倒计时</b></span>
     </div>
     <div class="time-yk" id="timeyk">
         <b><span id="_d" onclick="tip()">00</span></b>
