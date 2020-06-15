@@ -91,28 +91,28 @@
                 sg = Math.floor(-leftTimeg / 1000 % 60); */
             }
             //将倒计时赋值到div中
-            document.getElementById("_d").innerHTML = "<b>" + d + "天，" + "</b>";
-            document.getElementById("_h").innerHTML = "<b>" + h + "时，" + "</b>";
-            document.getElementById("_m").innerHTML = "<b>" + m + "分，" + "</b>";
-            document.getElementById("_s").innerHTML = "<b>" + s + "秒" + "</b>";
+            document.getElementById("_d").innerHTML = d + "天，";
+            document.getElementById("_h").innerHTML = h + "时，";
+            document.getElementById("_m").innerHTML = m + "分，";
+            document.getElementById("_s").innerHTML = s + "秒";
 
             /* 期末 */
-            document.getElementById("q_d").innerHTML = "<b>" + dq + "天" + "</b>";
-            /* document.getElementById("q_h").innerHTML = "<b>" + hq + "时，" + "</b>";
-            document.getElementById("q_m").innerHTML = "<b>" + mq + "分，" + "</b>";
-            document.getElementById("q_s").innerHTML = "<b>" + sq + "秒" + "</b>"; */
+            document.getElementById("q_d").innerHTML = dq + "天";
+            /* document.getElementById("q_h").innerHTML = hq + "时，";
+            document.getElementById("q_m").innerHTML = mq + "分，";
+            document.getElementById("q_s").innerHTML = sq + "秒"; */
 
             /* 中考 */
-            document.getElementById("z_d").innerHTML = "<b>" + dz + "天" + "</b>";
-            /* document.getElementById("z_h").innerHTML = "<b>" + hz + "时，" + "</b>";
-            document.getElementById("z_m").innerHTML = "<b>" + mz + "分，" + "</b>";
-            document.getElementById("z_s").innerHTML = "<b>" + sz + "秒" + "</b>"; */
+            document.getElementById("z_d").innerHTML = dz + "天";
+            /* document.getElementById("z_h").innerHTML = hz + "时，";
+            document.getElementById("z_m").innerHTML = mz + "分，";
+            document.getElementById("z_s").innerHTML = sz + "秒"; */
 
             /* 高考 */
-            document.getElementById("g_d").innerHTML = "<b>" + dg + "天" + "</b>";
-            /* document.getElementById("g_h").innerHTML = "<b>" + hg + "时，" + "</b>";
-            document.getElementById("g_m").innerHTML = "<b>" + mg + "分，" + "</b>";
-            document.getElementById("g_s").innerHTML = "<b>" + sg + "秒" + "</b>"; */
+            document.getElementById("g_d").innerHTML = dg + "天";
+            /* document.getElementById("g_h").innerHTML = hg + "时，";
+            document.getElementById("g_m").innerHTML = mg + "分，";
+            document.getElementById("g_s").innerHTML = sg + "秒"; */
 
             //递归每秒调用countTime方法，显示动态时间效果
             setTimeout(countTime, 1000);
@@ -262,14 +262,14 @@
 
 <body onload="countTime()">
     <div class="desc">
-        <span id="yuekao"><b>月考倒计时</b></span><br>
+        <b><span id="yuekao"><b>月考倒计时</b></span><br>
         <span class="desc2"><b>近期月考倒计时</b></span>
     </div>
     <div class="time-yk">
-        <span id="_d" onclick="tip()">00</span>
-        <span id="_h" onclick="tip()">00</span>
-        <span id="_m" onclick="tip()">00</span>
-        <span id="_s" onclick="tip()">00</span>
+        <b><span id="_d" onclick="tip()">00</span></b>
+        <b><span id="_h" onclick="tip()">00</span></b>
+        <b><span id="_m" onclick="tip()">00</span></b>
+        <b><span id="_s" onclick="tip()">00</span></b>
     </div>
     <!-- <button type="button" value="关于工具" onclick="openother()" class="open-other" title="关于工具" id="buttonopen"><b>显示/隐藏更多</b></button><br> -->
     <div class="time" id="time">
@@ -277,22 +277,22 @@
         <span class="desc-zk" id="zhongkao"><b>中考倒计时</b></span>
         <span class="desc-gk" id="gaokao"><b>高考倒计时</b></span><br>
         <div class="time-qm">
-            <span id="q_d" onclick="tip()">00</span>
-            <!-- <span id="q_h" onclick="tip()">00</span>
-        <span id="q_m" onclick="tip()">00</span>
-        <span id="q_s" onclick="tip()">00</span> -->
+            <del><b><span id="q_d" onclick="tip()">00</span></b></del>
+            <!-- <b><span id="q_h" onclick="tip()">00</span></b>
+        <b><span id="q_m" onclick="tip()">00</span></b>
+        <b><span id="q_s" onclick="tip()">00</span></b> -->
         </div>
         <div class="time-zk">
-            <span id="z_d" onclick="tip()">00</span>
-            <!-- <span id="z_h" onclick="tip()">00</span>
-        <span id="z_m" onclick="tip()">00</span>
-        <span id="z_s" onclick="tip()">00</span> -->
+            <del><b><span id="z_d" onclick="tip()">00</span></b></del>
+            <!-- <b><span id="z_h" onclick="tip()">00</span></b>
+        <b><span id="z_m" onclick="tip()">00</span></b>
+        <b><span id="z_s" onclick="tip()">00</span></b> -->
         </div>
         <div class="time-gk">
-            <span id="g_d" onclick="tip()">00</span>
-            <!-- <span id="g_h" onclick="tip()">00</span>
-        <span id="g_m" onclick="tip()">00</span>
-        <span id="g_s" onclick="tip()">00</span> -->
+            <del><b><span id="g_d" onclick="tip()">00</span></b></del>
+            <!-- <b><span id="g_h" onclick="tip()">00</span></b>
+        <b><span id="g_m" onclick="tip()">00</span></b>
+        <b><span id="g_s" onclick="tip()">00</span></b> -->
         </div>
     </div>
 </body>
