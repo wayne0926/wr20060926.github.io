@@ -121,6 +121,27 @@
         function tip() {
             alert("加油努力复习哟 \n \n(＾Ｕ＾)ノ~ＹＯ");
         }
+
+        /* function huan() {
+            document.getElementById("timeyk").style.color = "#0070c9";
+            document.getElementById("timeqm").style.color = "#0070c9";
+            document.getElementById("timezk").style.color = "#0070c9";
+            document.getElementById("timegk").style.color = "#0070c9";
+            document.getElementById("body").style.backgroundColor = "#fff";
+            document.getElementById("yuekao").style.color = "#111";
+            document.getElementById("desc2").style.color = "#cfcfcf";
+            document.getElementById("qimo").style.color = "#cfcfcf";
+            document.getElementById("zhongkao").style.color = "#cfcfcf";
+            document.getElementById("gaokao").style.color = "#cfcfcf";
+            document.getElementById("timeyk").style.borderColor = "#e3e3e3";
+            document.getElementById("timeqm").style.borderColor = "#e3e3e3";
+            document.getElementById("timezk").style.borderColor = "#e3e3e3";
+            document.getElementById("timegk").style.borderColor = "#e3e3e3";
+            document.getElementById("timeyk").style.backgroundColor = "#fafafa";
+            document.getElementById("timeqm").style.backgroundColor = "#fafafa";
+            document.getElementById("timezk").style.backgroundColor = "#fafafa";
+            document.getElementById("timegk").style.backgroundColor = "#fafafa";
+        } */
     </script>
     <style>
         body {
@@ -260,12 +281,12 @@
     </style>
 </head>
 
-<body onload="countTime()">
+<body onload="countTime()" id="body">
     <div class="desc">
         <b><span id="yuekao"><b>月考倒计时</b></span><br>
-        <span class="desc2"><b>近期月考倒计时</b></span>
+            <span class="desc2" id="desc2"><b>近期月考倒计时</b></span>
     </div>
-    <div class="time-yk">
+    <div class="time-yk" id="timeyk">
         <b><span id="_d" onclick="tip()">00</span></b>
         <b><span id="_h" onclick="tip()">00</span></b>
         <b><span id="_m" onclick="tip()">00</span></b>
@@ -276,25 +297,28 @@
         <span class="desc-qm" id="qimo"><b>期末倒计时</b></span>
         <span class="desc-zk" id="zhongkao"><b>中考倒计时</b></span>
         <span class="desc-gk" id="gaokao"><b>高考倒计时</b></span><br>
-        <div class="time-qm">
+        <div class="time-qm" id="timeqm">
             <del><b><span id="q_d" onclick="tip()">00</span></b></del>
             <!-- <b><span id="q_h" onclick="tip()">00</span></b>
         <b><span id="q_m" onclick="tip()">00</span></b>
         <b><span id="q_s" onclick="tip()">00</span></b> -->
         </div>
-        <div class="time-zk">
+        <div class="time-zk" id="timezk">
             <del><b><span id="z_d" onclick="tip()">00</span></b></del>
             <!-- <b><span id="z_h" onclick="tip()">00</span></b>
         <b><span id="z_m" onclick="tip()">00</span></b>
         <b><span id="z_s" onclick="tip()">00</span></b> -->
         </div>
-        <div class="time-gk">
+        <div class="time-gk" id="timegk">
             <del><b><span id="g_d" onclick="tip()">00</span></b></del>
             <!-- <b><span id="g_h" onclick="tip()">00</span></b>
         <b><span id="g_m" onclick="tip()">00</span></b>
         <b><span id="g_s" onclick="tip()">00</span></b> -->
         </div>
     </div>
+    <!-- <footer>
+        <button class="huan" id="huan" onclick="huan()">换</button>
+    </footer> -->
 </body>
 
 </html>
