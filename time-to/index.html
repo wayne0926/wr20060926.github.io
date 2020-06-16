@@ -10,30 +10,30 @@
             //获取当前时间
             var date = new Date();
             var now = date.getTime();
-            //设置截止时间（月考）
-            var str = "2020/6/15 08:30:00";
+            //设置截止时间（近期）
+            var str = "2020/7/1 08:30:00";
             var endDate = new Date(str);
             var end = endDate.getTime();
             //设置截止时间（期末）
-            var strq = "2020/7/15 08:30:00";
+            var strq = "2020/7/1 08:30:00";
             var endDate = new Date(strq);
             var endq = endDate.getTime();
             //设置截止时间（中考）
-            var strz = "2022/7/15 08:30:00";
+            var strz = "2022/6/15 08:30:00";
             var endDate = new Date(strz);
             var endz = endDate.getTime();
             //设置截止时间（高考）
-            var str = "2024/7/15 08:30:00";
+            var str = "2024/6/15 08:30:00";
             var endDate = new Date(str);
             var endg = endDate.getTime();
 
             //时间差
-            var leftTime = end - now; /* 月考 */
+            var leftTime = end - now; /* 近期 */
             var leftTimeq = endq - now; /* 期末 */
             var leftTimez = endz - now; /* 中考 */
             var leftTimeg = endg - now; /* 高考 */
             //定义变量 d,h,m,s保存倒计时的时间
-            var d, h, m, s; /* 月考 */
+            var d, h, m, s; /* 近期 */
             if (leftTime >= 0) {
                 d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
                 h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
@@ -298,7 +298,7 @@
         <span class="desc-zk" id="zhongkao"><b>中考倒计时</b></span>
         <span class="desc-gk" id="gaokao"><b>高考倒计时</b></span><br>
         <div class="time-qm" id="timeqm">
-            <del><b><span id="q_d" onclick="tip()">00</span></b></del>
+            <b><span id="q_d" onclick="tip()">00</span></b>
             <!-- <b><span id="q_h" onclick="tip()">00</span></b>
         <b><span id="q_m" onclick="tip()">00</span></b>
         <b><span id="q_s" onclick="tip()">00</span></b> -->
