@@ -1,5 +1,5 @@
 // 转换按钮触发 
-function zhuanhuan() {
+/* function zhuanhuan() {
     document.getElementById("xianshi-1").innerHTML = "显示单词(听写开始后使用)"; //更改名称
     document.getElementById('xianshi-1').style.display = 'block'; //调整为显示按钮
     document.getElementById("xianshi-1").setAttribute("disabled", true); //设置不可点击
@@ -8,7 +8,7 @@ function zhuanhuan() {
     document.getElementById("good").style.display = "none";
     document.getElementById("display").style.display = "block"
 }
-
+ */
 //听写按钮触发
 function tingxie() {
     document.getElementById("txtJSON").value = ""; //清除输入框内容
@@ -133,16 +133,46 @@ function pronance(e) {
 
 
 //转换
-$("button#convert").click(function () {
+/* 
+function zhuanhuan() {
+    var ttt = document.getElementById("txtJSON").value;
+    if (ttt = null) {
+        $("button#convert").click(function () {
 
-    $(".display").empty();
-    var words = $('#txtJSON').val().split("\n");
-    for (i = 0; i < words.length; i++) {
-        $(".display").append("<div class='word' ><a class='" + words[i] + "' onclick='pronance(this)'>" +
-            words[i] + "</a></div>");
+            $(".display").empty();
+            var words = $('#txtJSON').val().split("\n");
+            for (i = 0; i < words.length; i++) {
+                $(".display").append("<div class='word' ><a class='" + words[i] + "' onclick='pronance(this)'>" +
+                    words[i] + "</a></div>");
+            }
+
+        });
     }
-
-});
+    else{
+        alert("11111")
+    }
+} */
+function zhuanhuan() {
+    if (document.getElementById("txtJSON").value == "") {
+        alert('请输入单词!');
+    } else {
+        $("button#convert").click(function () {
+            $(".display").empty();
+            var words = $('#txtJSON').val().split("\n");
+            for (i = 0; i < words.length; i++) {
+                $(".display").append("<div class='word' ><a class='" + words[i] + "' onclick='pronance(this)'>" +
+                    words[i] + "</a></div>");
+            }
+        });
+        document.getElementById("xianshi-1").innerHTML = "显示单词(听写开始后使用)"; //更改名称
+        document.getElementById('xianshi-1').style.display = 'block'; //调整为显示按钮
+        document.getElementById("xianshi-1").setAttribute("disabled", true); //设置不可点击
+        document.getElementById("xianshi-1").style.backgroundColor = '#555555'; //设置背景色
+        document.getElementById("xianshi-1").style.fontSize = "15px"; //设置不显目的字体
+        document.getElementById("good").style.display = "none";
+        document.getElementById("display").style.display = "block"
+    }
+}
 
 //听写
 $("button#dictation").click(function () {
