@@ -114,6 +114,47 @@
             /* document.getElementById("g_h").innerHTML = hg + "时，";
             document.getElementById("g_m").innerHTML = mg + "分，";
             document.getElementById("g_s").innerHTML = sg + "秒"; */
+            setInterval(function () {
+                if (day = "1") {
+                    day2 = "一"
+                }
+                if (day = "2") {
+                    day2 = "二"
+                }
+                if (day = "3") {
+                    day2 = "三"
+                }
+                if (day = "4") {
+                    day2 = "四"
+                }
+                if (day = "5") {
+                    day2 = "五"
+                }
+                if (day = "6") {
+                    day2 = "六"
+                }
+                if (day = "7") {
+                    day2 = "天"
+                }
+
+
+                var date = new Date();
+                var year = date.getFullYear(); //获取当前年份   
+                var mon = date.getMonth() + 1; //获取当前月份   
+                var da = date.getDate(); //获取当前日   
+                var day = date.getDay(); //获取当前星期几  
+                var h = date.getHours(); //获取小时   
+                var m = date.getMinutes(); //获取分钟   
+                var s = date.getSeconds(); //获取秒   
+                var d = document.getElementById('time-now');
+                if (s < 10) {
+                    s2 = "0" + s;
+                } else {
+                    var s2 = s
+                }
+                d.innerHTML = year + '/' + mon + '/' + da + '&ensp;' + '星期' + day2 + '&ensp;' + h + ':' + m +
+                    ':' + s2;
+            }, 1000)
 
             //递归每秒调用countTime方法，显示动态时间效果
             setTimeout(countTime, 1000);
@@ -145,7 +186,152 @@
         } */
     </script>
     <style>
-        body { background-color: #17171d; } .time-yk { background-color: #121217; text-align: center; margin: 3% auto; font-size: 40px; font-family: Microsoft Yahei; width: 700px; border: 5px solid #63636e; border-radius: 80px; /* text-shadow: 2px 2px 20px black; */ color: #845dde; } .desc { color: #ffffff; font-size: 70px; text-align: center; margin: 145px 0 0 0; font-family: Microsoft Yahei; } .desc2 { color: #aaaab3; font-size: 30px; /* margin-top: 3px; */ } #_s { opacity: 0.4; } #_m { opacity: 0.6; } #_h { opacity: 0.8; } #_d { font-size: 50px; } .time-qm { background-color: #121217; text-align: center; margin: 5% 5px; font-size: 40px; font-family: Microsoft Yahei; width: 250px; border: 5px solid #63636e; border-radius: 80px; /* text-shadow: 2px 2px 20px black; */ color: #845dde; float: left; } .time-zk { background-color: #121217; text-align: center; margin: 5% 5px; font-size: 40px; font-family: Microsoft Yahei; width: 250px; border: 5px solid #63636e; border-radius: 80px; /* text-shadow: 2px 2px 20px black; */ color: #845dde; float: left; } .time { /* float: left; */ /* display: none; */ width: 810px; height: 150px; margin: 5% auto; } .desc-qm { color: #aaaab3; font-size: 30px; text-align: center; margin: 0 0 0 8%; font-family: Microsoft Yahei; } .desc-zk { color: #aaaab3; font-size: 30px; text-align: center; margin: 0 0 0 14%; font-family: Microsoft Yahei; } .desc-gk { color: #aaaab3; font-size: 30px; text-align: center; margin: 0 0 0 14%; font-family: Microsoft Yahei; } .time-gk { background-color: #121217; text-align: center; margin: 5% 5px; font-size: 40px; font-family: Microsoft Yahei; width: 250px; border: 5px solid #63636e; border-radius: 80px; /* text-shadow: 2px 2px 20px black; */ color: #845dde; float: left; } /* .open-other { color: white; font-size: 20px; border: none; text-align: center; border-radius: 30px; background: #0071e3; width: 150px; height: 30px; float: left; margin: 0 46%; } */
+        body {
+            background-color: #17171d;
+        }
+
+        .time-yk {
+            background-color: #121217;
+            text-align: center;
+            margin: 3% auto;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 700px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #845dde;
+        }
+
+        .desc {
+            color: #ffffff;
+            font-size: 70px;
+            text-align: center;
+            margin: 100px 0 0 0;
+            font-family: Microsoft Yahei;
+        }
+
+        .desc2 {
+            color: #aaaab3;
+            font-size: 30px;
+            /* margin-top: 3px; */
+        }
+
+        #_s {
+            opacity: 0.4;
+        }
+
+        #_m {
+            opacity: 0.6;
+        }
+
+        #_h {
+            opacity: 0.8;
+        }
+
+        #_d {
+            font-size: 50px;
+        }
+
+        .time-qm {
+            background-color: #121217;
+            text-align: center;
+            margin: 5% 5px;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 250px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #845dde;
+            float: left;
+        }
+
+        .time-zk {
+            background-color: #121217;
+            text-align: center;
+            margin: 5% 5px;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 250px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #845dde;
+            float: left;
+            margin-bottom: 10%;
+        }
+
+        .time {
+            /* float: left; */
+            /* display: none; */
+            width: 810px;
+            height: 150px;
+            margin: 2% auto;
+        }
+
+        .desc-qm {
+            color: #aaaab3;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 0 0 8%;
+            font-family: Microsoft Yahei;
+        }
+
+        .desc-zk {
+            color: #aaaab3;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 0 0 14%;
+            font-family: Microsoft Yahei;
+        }
+
+        .desc-gk {
+            color: #aaaab3;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 0 0 14%;
+            font-family: Microsoft Yahei;
+        }
+
+        .time-gk {
+            background-color: #121217;
+            text-align: center;
+            margin: 5% 5px;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 250px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #845dde;
+            float: left;
+        }
+
+        .time-now {
+            background-color: #121217;
+            text-align: center;
+            margin: 3% auto;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 800px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #845dde;
+            float: left;
+            font-weight: 100;
+        }
+
+        .desc-now {
+            color: #aaaab3;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 0 0 43%;
+            font-family: Microsoft Yahei;
+        }
+
+        /* .open-other { color: white; font-size: 20px; border: none; text-align: center; border-radius: 30px; background: #0071e3; width: 150px; height: 30px; float: left; margin: 0 46%; } */
     </style>
 </head>
 
@@ -153,6 +339,7 @@
     <div class="desc">
         <b><span id="yuekao"><b>近期考试</b></span><br>
             <span class="desc2" id="desc2"><b>倒计时</b></span>
+
     </div>
     <div class="time-yk" id="timeyk">
         <b><span id="_d" onclick="tip()">00</span></b>
@@ -182,6 +369,10 @@
             <!-- <b><span id="g_h" onclick="tip()">00</span></b>
         <b><span id="g_m" onclick="tip()">00</span></b>
         <b><span id="g_s" onclick="tip()">00</span></b> -->
+        </div>
+        <span class="desc-now" id="gaokao"><b>现在时间</b></span><br>
+        <div class="time-now">
+            <span id="time-now">00</span><br>
         </div>
     </div>
     <!-- <footer>
