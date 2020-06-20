@@ -1,18 +1,33 @@
 body {
-  padding-top: 50px;
+  padding-top: 3rem;
 }
 
 .starter-template {
-  padding: 40px 15px;
+  padding: 3rem 1.5rem;
   text-align: center;
 }
 
-h1,
-p,
+h2,
 blockquote {
   text-align: left;
 }
 
-a {
-  color: #111;
+.fixed-top {
+margin-bottom:0 ;
+}
+.starter-template {
+  margin: 10px;
+}
+.a {
+  color: #007bff; 
+  opacity: 0;
+}
+.a:hover {
+  color: #007bff;
+  text-decoration:none;
+  opacity: 1;
+  transition: all 0.3s;
+}
+.lead {
+  margin: 15px;
 }
