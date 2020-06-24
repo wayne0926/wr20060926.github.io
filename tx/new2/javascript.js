@@ -188,9 +188,9 @@ $("button#dictation").click(function () {
 })();
 
 //跳转判断
-if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) { //跳到手机端
+/* if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) { //跳到手机端
     window.location = "../wap.html";
-}
+} */
 
 //“如何使用”
 function MsgBox() //声明标识符
