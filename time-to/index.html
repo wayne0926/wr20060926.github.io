@@ -43,7 +43,7 @@
             }
             if (leftTime < 0) {
                 document.getElementById("yuekao").innerHTML = "近期考试"
-                document.getElementById("desc2").innerHTML = "已过去"
+                document.getElementById("desc2").innerHTML = "已进行"
                 d = Math.floor(-leftTime / 1000 / 60 / 60 / 24);
                 h = Math.floor(-leftTime / 1000 / 60 / 60 % 24);
                 m = Math.floor(-leftTime / 1000 / 60 % 60);
@@ -57,7 +57,7 @@
                 sq = Math.floor(leftTimeq / 1000 % 60); */
             }
             if (leftTimeq < 0) {
-                document.getElementById("qimo").innerHTML = "期末已过去"
+                document.getElementById("qimo").innerHTML = "期末已进行"
                 dq = Math.floor(-leftTimeq / 1000 / 60 / 60 / 24);
                 /*  hq = Math.floor(leftTimeq / 1000 / 60 / 60 % 24);
                  mq = Math.floor(leftTimeq / 1000 / 60 % 60);
@@ -71,7 +71,7 @@
                 sz = Math.floor(leftTimez / 1000 % 60); */
             }
             if (leftTimez < 0) {
-                document.getElementById("zhongkao").innerHTML = "中考已过去"
+                document.getElementById("zhongkao").innerHTML = "中考已进行"
                 dz = Math.floor(-leftTimez / 1000 / 60 / 60 / 24);
                 /* hz = Math.floor(-leftTimez / 1000 / 60 / 60 % 24);
                 mz = Math.floor(-leftTimez / 1000 / 60 % 60);
@@ -85,7 +85,7 @@
                 sg = Math.floor(leftTimeg / 1000 % 60); */
             }
             if (leftTimeg < 0) {
-                document.getElementById("gaokao").innerHTML = "高考已过去"
+                document.getElementById("gaokao").innerHTML = "高考已进行"
                 dg = Math.floor(-leftTimeg / 1000 / 60 / 60 / 24);
                 /* hg = Math.floor(-leftTimeg / 1000 / 60 / 60 % 24);
                 mg = Math.floor(-leftTimeg / 1000 / 60 % 60);
@@ -152,8 +152,17 @@
                 } else {
                     var s2 = s
                 }
-                d.innerHTML = year + '/' + mon + '/' + da + '&ensp;' + '星期' + day2 + '&ensp;' + h + ':' + m +
-                    ':' + s2;
+                if (m < 10) {
+                    m2 = "0" + m;
+                } else {
+                    var m2 = m
+                }
+                if (h < 10) {
+                    h2 = "0" + h;
+                } else {
+                    var h2 = h
+                }
+                d.innerHTML = '<span id="timee-now">' + h2 + ':' + m2 + ':' + s2 + "</span>" + '&ensp;' + '<span id="tt">' + '星期' + day2 + '&ensp;' + year + '年' + mon + '月' + da + '日' + '</span>';
             }, 1000)
 
             //递归每秒调用countTime方法，显示动态时间效果
@@ -188,6 +197,7 @@
     <style>
         body {
             background-color: #17171d;
+            margin: 0;
         }
 
         .time-yk {
@@ -207,7 +217,7 @@
             color: #ffffff;
             font-size: 70px;
             text-align: center;
-            margin: 100px 0 0 0;
+            margin: 2% 0 0 0;
             font-family: Microsoft Yahei;
         }
 
@@ -259,7 +269,7 @@
             /* text-shadow: 2px 2px 20px black; */
             color: #845dde;
             float: left;
-            margin-bottom: 10%;
+            margin-bottom: 6%;
         }
 
         .time {
@@ -311,15 +321,16 @@
         .time-now {
             background-color: #121217;
             text-align: center;
-            margin: 3% auto;
-            font-size: 40px;
+            margin: 0 auto;
+            font-size: 25px;
             font-family: Microsoft Yahei;
             width: 800px;
             border: 5px solid #63636e;
-            border-radius: 80px;
+            border-top: none;
+            border-radius: 0px 0px 60px 60px;
             /* text-shadow: 2px 2px 20px black; */
             color: #845dde;
-            float: left;
+            /* float: left; */
             font-weight: 100;
         }
 
@@ -330,22 +341,31 @@
             margin: 0 0 0 43%;
             font-family: Microsoft Yahei;
         }
+        #timee-now {
+            font-weight: 600;
+            font-size: 40px;
+        }
+        
 
         /* .open-other { color: white; font-size: 20px; border: none; text-align: center; border-radius: 30px; background: #0071e3; width: 150px; height: 30px; float: left; margin: 0 46%; } */
     </style>
 </head>
 
 <body onload="countTime()" id="body">
+    <!-- <span class="desc-now" id="gaokao"><b>现在时间</b></span><br> -->
+    <div class="time-now">
+        <span id="time-now">加载中...</span><br>
+    </div><br>
     <div class="desc">
         <b><span id="yuekao"><b>近期考试</b></span><br>
             <span class="desc2" id="desc2"><b>倒计时</b></span>
 
     </div>
     <div class="time-yk" id="timeyk">
-        <b><span id="_d" onclick="tip()">00</span></b>
-        <b><span id="_h" onclick="tip()">00</span></b>
-        <b><span id="_m" onclick="tip()">00</span></b>
-        <b><span id="_s" onclick="tip()">00</span></b>
+        <b><span id="_d" onclick="tip()">加载中...</span></b>
+        <b><span id="_h" onclick="tip()"></span></b>
+        <b><span id="_m" onclick="tip()"></span></b>
+        <b><span id="_s" onclick="tip()"></span></b>
     </div>
     <!-- <button type="button" value="关于工具" onclick="openother()" class="open-other" title="关于工具" id="buttonopen"><b>显示/隐藏更多</b></button><br> -->
     <div class="time" id="time">
@@ -353,27 +373,24 @@
         <span class="desc-zk" id="zhongkao"><b>中考倒计时</b></span>
         <span class="desc-gk" id="gaokao"><b>高考倒计时</b></span><br>
         <div class="time-qm" id="timeqm">
-            <b><span id="q_d" onclick="tip()">00</span></b>
-            <!-- <b><span id="q_h" onclick="tip()">00</span></b>
-        <b><span id="q_m" onclick="tip()">00</span></b>
-        <b><span id="q_s" onclick="tip()">00</span></b> -->
+            <b><span id="q_d" onclick="tip()">加载中...</span></b>
+            <!-- <b><span id="q_h" onclick="tip()">加载中...</span></b>
+        <b><span id="q_m" onclick="tip()">加载中...</span></b>
+        <b><span id="q_s" onclick="tip()">加载中...</span></b> -->
         </div>
         <div class="time-zk" id="timezk">
-            <b><span id="z_d" onclick="tip()">00</span></b>
-            <!-- <b><span id="z_h" onclick="tip()">00</span></b>
-        <b><span id="z_m" onclick="tip()">00</span></b>
-        <b><span id="z_s" onclick="tip()">00</span></b> -->
+            <b><span id="z_d" onclick="tip()">加载中...</span></b>
+            <!-- <b><span id="z_h" onclick="tip()">加载中...</span></b>
+        <b><span id="z_m" onclick="tip()">加载中...</span></b>
+        <b><span id="z_s" onclick="tip()">加载中...</span></b> -->
         </div>
         <div class="time-gk" id="timegk">
-            <b><span id="g_d" onclick="tip()">00</span></b>
-            <!-- <b><span id="g_h" onclick="tip()">00</span></b>
-        <b><span id="g_m" onclick="tip()">00</span></b>
-        <b><span id="g_s" onclick="tip()">00</span></b> -->
+            <b><span id="g_d" onclick="tip()">加载中...</span></b>
+            <!-- <b><span id="g_h" onclick="tip()">加载中...</span></b>
+        <b><span id="g_m" onclick="tip()">加载中...</span></b>
+        <b><span id="g_s" onclick="tip()">加载中...</span></b> -->
         </div>
-        <span class="desc-now" id="gaokao"><b>现在时间</b></span><br>
-        <div class="time-now">
-            <span id="time-now">00</span><br>
-        </div>
+
     </div>
     <!-- <footer>
         <button class="huan" id="huan" onclick="huan()">换</button>

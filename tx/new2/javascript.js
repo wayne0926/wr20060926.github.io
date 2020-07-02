@@ -113,7 +113,7 @@ function pronance(e) {
         }
     }
     var audio = $("#audio");
-    audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(e).attr("class") + "&type=" + p);
+    audio.attr("src", "http://dict.youdao.com/dictvoice?type=0&audio=" + $(e).attr("class") /* + "&type=" + p */);
     audio.get(0).play();
 
     $("#dictHcContent").attr("src", "http://dict.cn/apis/dict3.php?q=" + $(e).attr("class"));
@@ -128,7 +128,7 @@ function zhuanhuan() {
             $(".display").empty();
             var words = $('#txtJSON').val().split("\n");
             for (i = 0; i < words.length; i++) {
-                $(".display").append("<div class='word'><a class='" + words[i] + "' onclick='pronance(this)'>" +
+                $(".display").append("<div class='word card bg-secondary text-white lead p-2 col' style='float:left;width:50%;'><a class='" + words[i] + "' onclick='pronance(this)'>" +
                     words[i] + "</a></div>");
             // card bg-secondary text-white lead p-2 col
             /// style='float:left;width:50%;'
@@ -145,6 +145,7 @@ function zhuanhuan() {
 
 //听写
 $("button#dictation").click(function () {
+    debugger;
     var childs = $(".display").find("div > a");
     var pn = document.getElementsByName("proun");
     var p = 1;
@@ -159,8 +160,7 @@ $("button#dictation").click(function () {
     function myloop() {
         setTimeout(function () {
             var audio = $("#audio");
-            audio.attr("src", "http://dict.youdao.com/dictvoice?audio=" + $(childs[i]).attr("class") +
-                "&type=" + p);
+            audio.attr("src", "http://dict.youdao.com/dictvoice?type=0&audio=" + $(childs[i]).attr("class")/*  + "&type=" + p */);
             audio.get(0).play();
             i++;
             if (i < childs.length) {
