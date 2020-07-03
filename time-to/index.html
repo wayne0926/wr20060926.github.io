@@ -49,6 +49,11 @@
                 m = Math.floor(-leftTime / 1000 / 60 % 60);
                 s = Math.floor(-leftTime / 1000 % 60);
             }
+            if (2 <= d <= 0) {
+                if (h <= 24) {
+                    document.getElementById("timeyk").className = "time-yk2"
+                }
+            }
             var dq, hq, mq, sq; /* 期末 */
             if (leftTimeq >= 0) {
                 dq = Math.floor(leftTimeq / 1000 / 60 / 60 / 24);
@@ -56,12 +61,18 @@
                 mq = Math.floor(leftTimeq / 1000 / 60 % 60);
                 sq = Math.floor(leftTimeq / 1000 % 60); */
             }
+
             if (leftTimeq < 0) {
-                document.getElementById("qimo").innerHTML = "期末已进行"
+                document.getElementById("qimo").innerHTML = "期末已进行";
                 dq = Math.floor(-leftTimeq / 1000 / 60 / 60 / 24);
-                /*  hq = Math.floor(leftTimeq / 1000 / 60 / 60 % 24);
-                 mq = Math.floor(leftTimeq / 1000 / 60 % 60);
-                 sq = Math.floor(leftTimeq / 1000 % 60); */
+                hq = Math.floor(leftTimeq / 1000 / 60 / 60 % 24);
+                mq = Math.floor(leftTimeq / 1000 / 60 % 60);
+                sq = Math.floor(leftTimeq / 1000 % 60);
+            }
+            if (2 <= dq <= 5) {
+                if (hq <= 24) {
+                    document.getElementById("timeqm").className = "time-qm2";
+                }
             }
             var dz, hz, mz, sz; /* 中考 */
             if (leftTimez >= 0) {
@@ -71,26 +82,37 @@
                 sz = Math.floor(leftTimez / 1000 % 60); */
             }
             if (leftTimez < 0) {
-                document.getElementById("zhongkao").innerHTML = "中考已进行"
+                document.getElementById("zhongkao").innerHTML = "中考已进行";
                 dz = Math.floor(-leftTimez / 1000 / 60 / 60 / 24);
-                /* hz = Math.floor(-leftTimez / 1000 / 60 / 60 % 24);
+                hz = Math.floor(-leftTimez / 1000 / 60 / 60 % 24);
                 mz = Math.floor(-leftTimez / 1000 / 60 % 60);
-                sz = Math.floor(-leftTimez / 1000 % 60); */
+                sz = Math.floor(-leftTimez / 1000 % 60);
             }
+            /*  if (3 <= dz <= 90) {
+                 if (hz <= 24) {
+                     document.getElementById("timezk").className = "time-zk2";
+                 }
+             } */
             var dg, hg, mg, sg; /* 高考 */
             if (leftTimeg >= 0) {
                 dg = Math.floor(leftTimeg / 1000 / 60 / 60 / 24);
-                /* hg = Math.floor(leftTimeg / 1000 / 60 / 60 % 24);
+                hg = Math.floor(leftTimeg / 1000 / 60 / 60 % 24);
                 mg = Math.floor(leftTimeg / 1000 / 60 % 60);
-                sg = Math.floor(leftTimeg / 1000 % 60); */
+                sg = Math.floor(leftTimeg / 1000 % 60);
             }
             if (leftTimeg < 0) {
-                document.getElementById("gaokao").innerHTML = "高考已进行"
+                document.getElementById("gaokao").innerHTML = "高考已进行";
                 dg = Math.floor(-leftTimeg / 1000 / 60 / 60 / 24);
-                /* hg = Math.floor(-leftTimeg / 1000 / 60 / 60 % 24);
+                hg = Math.floor(-leftTimeg / 1000 / 60 / 60 % 24);
                 mg = Math.floor(-leftTimeg / 1000 / 60 % 60);
-                sg = Math.floor(-leftTimeg / 1000 % 60); */
+                sg = Math.floor(-leftTimeg / 1000 % 60);
+                /* if (4 <= dg <= 180) {
+                    if (hg <= 24) {
+                        document.getElementById("timegk").className = "time-gk2";
+                    }
+                } */
             }
+
             //将倒计时赋值到div中
             document.getElementById("_d").innerHTML = d + "天，";
             document.getElementById("_h").innerHTML = h + "时，";
@@ -162,17 +184,70 @@
                 } else {
                     var h2 = h
                 }
-                d.innerHTML = '<span id="timee-now">' + h2 + ':' + m2 + ':' + s2 + "</span>" + '&ensp;' + '<span id="tt">' + '星期' + day2 + '&ensp;' + year + '年' + mon + '月' + da + '日' + '</span>';
+                d.innerHTML = '<span id="timee-now">' + h2 + ':' + m2 + ':' + s2 + "</span>" + '&ensp;' +
+                    '<span id="tt">' + '星期' + day2 + '&ensp;' + year + '年' + mon + '月' + da + '日' + '</span>';
             }, 1000)
 
             //递归每秒调用countTime方法，显示动态时间效果
             setTimeout(countTime, 1000);
         }
+        var hour = new Date().getHours();
+        if (5 <= hour <= 10) {
+            var d = "早上好呀"
+        }
+        if (10 < hour <= 13) {
+            var d = "中午好呀"
+        }
+        if (13 < hour < 17) {
+            var d = "下午好呀"
+        }
+        if (17 <= hour <= 23) {
+            var d = "晚上好呀"
+        }
+        if (0 <= hour < 5) {
+            var d = "晚上好呀"
+        }
+        fetch('https://v1.hitokoto.cn')
+            .then(function (res) {
+                return res.json();
+            })
+            .then(function (data) {
+                var hitokoto = document.getElementById('hitokoto');
+                hitokoto.innerText = data.hitokoto;
+            })
+            .catch(function (err) {
+                console.error(err);
+            })
 
         function tip() {
-            alert("加油努力复习哟 \n \n(ง •_•)ง \n(＾Ｕ＾)ノ~ＹＯ");
+            fetch('https://v1.hitokoto.cn')
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (data) {
+                    var hitokoto = document.getElementById('hitokoto');
+                    hitokoto.innerText = data.hitokoto;
+                })
+                .catch(function (err) {
+                    console.error(err);
+                })
+            alert(d + "，伙计" + "\n加油努力复习哟!" + "\n \n 『" + hitokoto.innerText + "』");
         }
 
+        function nowtip() {
+            fetch('https://v1.hitokoto.cn')
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (data) {
+                    var hitokoto = document.getElementById('hitokoto');
+                    hitokoto.innerText = data.hitokoto;
+                })
+                .catch(function (err) {
+                    console.error(err);
+                })
+            alert(d + "\n 随机经典名句：" + "\n 『" + hitokoto.innerText + "』");
+        }
         /* function huan() {
             document.getElementById("timeyk").style.color = "#0070c9";
             document.getElementById("timeqm").style.color = "#0070c9";
@@ -211,6 +286,22 @@
             border-radius: 80px;
             /* text-shadow: 2px 2px 20px black; */
             color: #845dde;
+            /* -webkit-text-stroke:1px #f00; */
+
+        }
+
+        .time-yk2 {
+            background-color: #121217;
+            text-align: center;
+            margin: 3% auto;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 700px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #2997ff;
+            -webkit-text-stroke: 1.3px white;
         }
 
         .desc {
@@ -257,6 +348,21 @@
             float: left;
         }
 
+        .time-qm2 {
+            background-color: #121217;
+            text-align: center;
+            margin: 5% 5px;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 250px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #2997ff;
+            float: left;
+            -webkit-text-stroke: 1.3px white;
+        }
+
         .time-zk {
             background-color: #121217;
             text-align: center;
@@ -270,6 +376,22 @@
             color: #845dde;
             float: left;
             margin-bottom: 6%;
+        }
+
+        .time-zk2 {
+            background-color: #121217;
+            text-align: center;
+            margin: 5% 5px;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 250px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #2997ff;
+            float: left;
+            margin-bottom: 6%;
+            -webkit-text-stroke: 1.3px white;
         }
 
         .time {
@@ -318,13 +440,28 @@
             float: left;
         }
 
+        .time-gk2 {
+            background-color: #121217;
+            text-align: center;
+            margin: 5% 5px;
+            font-size: 40px;
+            font-family: Microsoft Yahei;
+            width: 250px;
+            border: 5px solid #63636e;
+            border-radius: 80px;
+            /* text-shadow: 2px 2px 20px black; */
+            color: #2997ff;
+            float: left;
+            -webkit-text-stroke: 1.3px white;
+        }
+
         .time-now {
             background-color: #121217;
             text-align: center;
             margin: 0 auto;
             font-size: 25px;
             font-family: Microsoft Yahei;
-            width: 800px;
+            width: 520px;
             border: 5px solid #63636e;
             border-top: none;
             border-radius: 0px 0px 60px 60px;
@@ -341,11 +478,15 @@
             margin: 0 0 0 43%;
             font-family: Microsoft Yahei;
         }
+
         #timee-now {
             font-weight: 600;
             font-size: 40px;
         }
-        
+
+        /* #timeyk {
+            -webkit-text-stroke: 2px red;
+        } */
 
         /* .open-other { color: white; font-size: 20px; border: none; text-align: center; border-radius: 30px; background: #0071e3; width: 150px; height: 30px; float: left; margin: 0 46%; } */
     </style>
@@ -354,7 +495,8 @@
 <body onload="countTime()" id="body">
     <!-- <span class="desc-now" id="gaokao"><b>现在时间</b></span><br> -->
     <div class="time-now">
-        <span id="time-now">加载中...</span><br>
+        <span id="time-now" onclick="nowtip()">加载中...</span><br>
+        <span id="hitokoto" style="display: none;"></span>
     </div><br>
     <div class="desc">
         <b><span id="yuekao"><b>近期考试</b></span><br>
