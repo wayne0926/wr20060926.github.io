@@ -2,11 +2,13 @@
 <html lang="zh">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Wei Ran">
-    <title>人生倒计时-WR</title>
-    <link rel="icon" href="../images/icon.png" type="image/x-icon">
+    <meta charset="UTF-8"><!-- 编码 -->
+    <meta name="author" content="Wei Ran"><!-- 作者 -->
+    <title>人生倒计时-WR</title><!-- 标题 -->
+    <link rel="icon" href="../images/icon.png" type="image/x-icon"><!-- 图标 -->
     <script>
+        /* 脚本 */
+        /* 开始执行（带重复时间） */
         function countTime() {
             //获取当前时间
             var date = new Date();
@@ -108,7 +110,7 @@
             }
             //时间临近
             if (dq >= 0) {
-                if (dq <= 3) {
+                if (dq <= 7) {
                     document.getElementById("timeqm").className = "time-qm2";
                 } else {
                     document.getElementById("timeqm").className = "time-qm";
@@ -153,14 +155,14 @@
             }
             //时间临近
             if (dz >= 0) {
-                if (dz <= 3) {
+                if (dz <= 90) {
                     document.getElementById("timezk").className = "time-zk2";
                 } else {
                     document.getElementById("timezk").className = "time-zk";
                 }
             }
             if (dz < 0) {
-                if (dz >= -3) {
+                if (dz >= -4) {
                     document.getElementById("timezk").className = "time-zk2";
                 } else {
                     document.getElementById("timezk").className = "time-zk";
@@ -196,14 +198,14 @@
             }
             //时间临近
             if (dg >= 0) {
-                if (dg <= 3) {
+                if (dg <= 180) {
                     document.getElementById("timegk").className = "time-gk2";
                 } else {
                     document.getElementById("timegk").className = "time-gk";
                 }
             }
             if (dg < 0) {
-                if (dg >= -3) {
+                if (dg >= -4) {
                     document.getElementById("timegk").className = "time-gk2";
                 } else {
                     document.getElementById("timegk").className = "time-gk";
@@ -334,11 +336,12 @@
 </head>
 
 <body onload="countTime()" id="body">
-    <!-- <span class="desc-now" id="gaokao"><b>现在时间</b></span><br> -->
+    <!-- 现在时间 -->
     <div class="time-now">
         <span id="time-now" onclick="nowtip()">加载中...</span><br>
         <span id="hitokoto" style="display: none;"></span>
     </div><br>
+    <!-- 主体部分描述 -->
     <div class="desc">
         <b><span id="yuekao">近期考试</span><br>
             <span class="desc2" id="desc2">倒计时</span></b>
@@ -378,9 +381,6 @@
         </div>
 
     </div>
-    <!-- <footer>
-        <button class="huan" id="huan" onclick="huan()">换</button>
-    </footer> -->
 </body>
 
 </html>
