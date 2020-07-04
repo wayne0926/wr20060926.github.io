@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="../images/icon.png" type="image/x-icon">
+    <link rel="icon" href="../images/icon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <title>音频可视化-WR</title>
 <style>
@@ -11,6 +11,8 @@
           top: 10px;
           left: 10px;
           z-index: 100;
+          text-align: center;
+          margin: 0 auto;
       }
       
       #canvas {
@@ -26,6 +28,7 @@
           left: 10px;
           bottom: 10px;
           width: calc(100% - 20px);
+          opacity: 0.7;
       }
 </style>
 </head>
@@ -79,7 +82,7 @@ window.onload = function () {
      function renderFrame() {
          requestAnimationFrame(renderFrame);//方法renderFrame托管到定时器，无限循环调度，频率<16.6ms/次
 
-         context.fillStyle = "#000";//黑色背景
+         context.fillStyle = "#fafafa";//白色背景
          context.fillRect(0, 0, WIDTH, HEIGHT);//画布拓展全屏,动态调整
 
          analyser.getByteFrequencyData(dataArray);//获取当前时刻的音频数据
@@ -95,8 +98,8 @@ window.onload = function () {
              barHeight = HEIGHT * percentV;
 
              //gbk,0~255
-             var r = 255 * percentV;//值越大越红
-             var g = 255 * percentH;//越靠右越绿
+             var r = 255 * percentH;//值越大越绿
+             var g = 255 * percentV;//越靠右越红
              var b = 50;
 
              context.fillStyle = "rgb(" + r + "," + g + "," + b + ")";

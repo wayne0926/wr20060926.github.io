@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <title>Wei Ran - Home Page</title>
+    <meta name="keywords" content="WR的主页,WR20060926主页,WR主页" />
+    <meta name="description" content="爱折腾的WR维护的引流主页" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
+    <meta name="360-site-verification" content="521bf0717a6c577637a811b99de9fdd0" />
+    <link href="home_new/assets/css/main.min.css" rel="stylesheet" />
+    <link href="home_new/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home_new/cat/live2d/css/live2d.css" />
+    <link href="../images/icon.ico" rel="icon" type="image/x-icon">
+    <noscript>
+        <link href="home_new/assets/css/noscript.css" rel="stylesheet" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" title="首页">
+            <div class="logo" title="首页">
+                <span class="fa fa-home fa-2x fa-fw" title="首页" title="首页"></span>
+            </div>
+            <div class="content">
+                <div class="inner">
+                    <h1>WR主页</h1>
+                    <p>WEI RAN'S <a href="https://wr0926.ml">Home Page</a><br />
+                        <a href="#"></a></p>
+                </div>
+            </div>
+            <nav>
+                <ul style="font-size: 18px;font-family: 'Microsoft Yahei';">
+                    <li><a href="#tools">工具</a></li>
+                    <li><a href="./download/">软件下载</a></li>
+                    <li><a href="#about">关于</a></li>
+                    <!-- <li><a href="./time-to/">月考倒计时</a></li> -->
+                    <li><a href="./message-board/">反馈</a></li>
+                    <li><a href="https://github.com/wr20060926/wr20060926.github.io">Github</a></li>
+                    <!--<li><a href="#elements">Elements</a></li>-->
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Intro -->
+            <article id="tools">
+                <h2 class="major">程序</h2>
+                <span class="image main"><img alt="tools" src="./images/tools.jpg" /></span>
+                <a href="./tx/">
+                    <button onclick="window.location.href('./tx/')">在线听写</button>
+                </a>
+                <a href="./suijimima/">
+                    <button onclick="window.location.href('./suijimima/')">随机密码生成器</button>
+                </a>
+                <a href="./ewm/">
+                    <button onclick="window.location.href('./ewm/')">二维码解析生成</button>
+                </a>
+                <a href="./mp3/">
+                    <button onclick="window.location.href('./mp3/')">音频可视化</button>
+                </a>
+                <a href="./tfyx/">
+                    <button onclick="window.location.href('./tfyx/')">拖放游戏</button>
+                </a>
+                <a href="./ewcharts/">
+                    <button onclick="window.location.href('./ewcharts/')">在线可视化图表</button>
+                </a>
+                <a href="./time-to/">
+                    <button onclick="window.location.href('./time-to/')">人生倒计时</button>
+                </a>
+            </article>
+            <!-- About -->
+            <article id="about">
+                <h2 class="major">关于</h2>
+                <span class="image main"><img alt="about" src="./images/about.jpg" /></span>
+                <p>
+                    <ul>
+                        <li>姓名：自己猜</li>
+                        <li>年龄：不告诉你</li>
+                        <li>学历：在校中学生</li>
+                        <li>爱好：学习，前端开发，白嫖</li>
+
+                    </ul>
+                </p>
+            </article>
+        </div>
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Wei Ran 搭建<a href="https://wr0926.ml/" target="_blank" title="首页"> 首页</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- BG -->
+    <div id="bg"></div>
+
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="hide-button">隐藏</div>
+    </div>
+    <div id="tp-weather-widget"></div>
+    <!-- Scripts -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="home_new/assets/js/browser.min.js"></script>
+    <script src="home_new/assets/js/breakpoints.min.js"></script>
+    <script src="home_new/assets/js/util.min.js"></script>
+    <script src="home_new/assets/js/main.min.js"></script>
+    <script>
+        const message_Path = 'https://6dduu6.github.io/live2d/'; //message.js的目录（必须填写，否则无法加载交互的文字）
+        const home_Path = 'https://wr0926.ml/'; //网站的根目录
+    </script>
+    <script src="home_new/cat/live2d/js/live2d.js"></script>
+    <script src="home_new/cat/live2d/js/message.min.js"></script>
+    <script>
+        loadlive2d("live2d", "home_new/cat/live2d/model/Pio/model.json"); //model.json和其模型等都需要放在服务器网站上
+    </script>
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    <script>
+        (function () {
+            var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+            document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+    <div id="tp-weather-widget"></div>
+    <script>
+      (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+      window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WX4FBXXFKE4F",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "auto",
+        token: "d038f2e1-a134-457a-9fff-bd7d178c7692",
+        hover: "enabled",
+        container: "tp-weather-widget"
+      })
+    </script>
+</body>
+
+</html>

@@ -1,161 +1,338 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="zh">
 
 <head>
-    <title>Wei Ran - Home Page</title>
+    <meta charset="utf-8">
+    <meta name="description" content="WR主页" />
+    <meta name="author" content="Wei Ran">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="WR的主页,WR20060926主页,WR主页" />
-    <meta name="description" content="爱折腾的WR维护的引流主页" />
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
-    <meta name="360-site-verification" content="521bf0717a6c577637a811b99de9fdd0" />
-    <link href="home_new/assets/css/main.min.css" rel="stylesheet" />
-    <link href="home_new/css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="home_new/cat/live2d/css/live2d.css" />
-    <link href="../images/icon.png" rel="icon" type="image/x-icon">
-    <noscript>
-        <link href="home_new/assets/css/noscript.css" rel="stylesheet" />
-    </noscript>
+    <link rel="shortcut icon" href="./images/icon.ico" type="image/x-icon">
+    <title>WR主页</title>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <script>
+        function huan() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'https://v1.hitokoto.cn');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    var data = JSON.parse(xhr.responseText);
+                    var hitokoto = document.getElementById('hitokoto');
+                    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+                    hitokoto.innerText = data.hitokoto;
+                }
+            }
+            xhr.send();
+        }
+    </script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        img {
+            transition: all 0.5s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .imgg {
+            overflow: hidden;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="./index/css/album.css" rel="stylesheet">
 </head>
 
-<body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-        <!-- Header -->
-        <header id="header" title="首页">
-            <div class="logo" title="首页">
-                <span class="fa fa-home fa-2x fa-fw" title="首页" title="首页"></span>
-            </div>
-            <div class="content">
-                <div class="inner">
-                    <h1>WR主页</h1>
-                    <p>WEI RAN'S <a href="https://wr0926.ml">Home Page</a><br />
-                        <a href="#"></a></p>
+<body>
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">关于</h4>
+                        <p class="text-muted">在下面添加有关相册、作者或任何其他背景上下文的信息。把它写长几句，这样人们就可以获得一些信息丰富的花絮。然后，将他们链接到一些社交网站或联系方式。
+                        </p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">联系</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white disabled">在Twitter上关注</a></li>
+                            <li><a href="#" class="text-white disabled">喜欢在Facebook上</a></li>
+                            <li><a href="#" class="text-white disabled">发电子邮件给我</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <nav>
-                <ul style="font-size: 18px;font-family: 'Microsoft Yahei';">
-                    <li><a href="#tools">工具</a></li>
-                    <li><a href="./download/">软件下载</a></li>
-                    <li><a href="#about">关于</a></li>
-                    <!-- <li><a href="./time-to/">月考倒计时</a></li> -->
-                    <li><a href="./message-board/">反馈</a></li>
-                    <li><a href="https://github.com/wr20060926/wr20060926.github.io">Github</a></li>
-                    <!--<li><a href="#elements">Elements</a></li>-->
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Main -->
-        <div id="main">
-
-            <!-- Intro -->
-            <article id="tools">
-                <h2 class="major">程序</h2>
-                <span class="image main"><img alt="tools" src="./images/tools.jpg" /></span>
-                <a href="./tx/">
-                    <button onclick="window.location.href('./tx/')">在线听写</button>
-                </a>
-                <a href="./suijimima/">
-                    <button onclick="window.location.href('./suijimima/')">随机密码生成器</button>
-                </a>
-                <a href="./ewm/">
-                    <button onclick="window.location.href('./ewm/')">二维码解析生成</button>
-                </a>
-                <a href="./mp3/">
-                    <button onclick="window.location.href('./mp3/')">音频可视化</button>
-                </a>
-                <a href="./tfyx/">
-                    <button onclick="window.location.href('./tfyx/')">拖放游戏</button>
-                </a>
-                <a href="./ewcharts/">
-                    <button onclick="window.location.href('./ewcharts/')">在线可视化图表</button>
-                </a>
-                <a href="./time-to/">
-                    <button onclick="window.location.href('./time-to/')">人生倒计时</button>
-                </a>
-            </article>
-            <!-- About -->
-            <article id="about">
-                <h2 class="major">关于</h2>
-                <span class="image main"><img alt="about" src="./images/about.jpg" /></span>
-                <p>
-                    <ul>
-                        <li>姓名：自己猜</li>
-                        <li>年龄：不告诉你</li>
-                        <li>学历：在校中学生</li>
-                        <li>爱好：学习，前端开发，白嫖</li>
-
-                    </ul>
-                </p>
-            </article>
         </div>
-        <!-- Footer -->
-        <footer id="footer">
-            <p class="copyright">&copy; Wei Ran 搭建<a href="https://wr0926.ml/" target="_blank" title="首页"> 首页</a>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2"
+                        查看Box="0 0 24 24" focusable="false">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="4" /></svg>
+                    <strong>WR主页</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>WR主页</h1>
+                <p class="lead text-muted">个人网站主页</p>
+                <p>
+                    <a href="https://github.com/wr20060926/wr20060926.github.io" class="btn btn-primary my-2"
+                        target="_blank">Github</a>
+                    <a href="#" class="btn btn-secondary my-2" onclick="huan()">手气不错</a>
+                    <a href="message-board/" class="btn btn-outline-secondary my-2">反馈</a>
+                </p>
+                <p class="card"><mark>『<span id="hitokoto" class="text-secondary">加载中</span>』</mark></p>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <a href="tx/" title="在线听写助手" class="imgg"><img src="./index/image/1.jpg"
+                                    class="bd-placeholder-img card-img-top" alt="在线听写助手" /></a>
+                            <title>在线听写助手</title>
+                            <div class="card-body">
+                                <a href="tx/" class="text-muted lead">
+                                    <p class="card-text">在线听写助手</p>
+                                </a>
+                                <p class="card-text">方便快速输入单词在线听写</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="tx/" class="btn btn-sm btn-primary">进入</a>
+                                        <a href="tx/liuyan/" target="_blank" class="btn btn-sm btn-outline-secondary">反馈</a>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <a href="suijimima/" title="随机密码生成器" class="imgg"><img src="./index/image/2.jpg"
+                                    class="bd-placeholder-img card-img-top" alt="随机密码生成器" /></a>
+                            <title>Placeholder</title>
+                            <div class="card-body">
+                                <a href="suijimima/" class="text-muted lead">
+                                    <p class="card-text">随机密码生成器</p>
+                                </a>
+                                <p class="card-text">在线随机生成需要类型的密码</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="suijimima/" class="btn btn-sm btn-primary">进入</a>
+                                        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary disabled">反馈</a>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <a href="time-to/" title="人生倒计时" class="imgg"><img src="./index/image/3.jpg"
+                                    class="bd-placeholder-img card-img-top" alt="人生倒计时" /></a>
+                            <div class="card-body">
+                                <a href="time-to/" class="text-muted lead">
+                                    <p class="card-text">人生倒计时</p>
+                                </a>
+                                <p class="card-text">人生中的重点考试倒计时（个人）</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="time-to/" class="btn btn-sm btn-primary">进入</a>
+                                        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary disabled">反馈</a>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <a href="mp3/" title="可视化音频播放器" class="imgg"><img src="./index/image/4.jpg"
+                                    class="bd-placeholder-img card-img-top" alt="可视化音频播放器" /></a>
+                            <title>Placeholder</title>
+                            <div class="card-body">
+                                <a href="mp3/" class="text-muted lead">
+                                    <p class="card-text">可视化音频播放器</p>
+                                </a>
+                                <p class="card-text">打开音乐文件并播放，可显示出音频波形</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="mp3/" class="btn btn-sm btn-primary">进入</a>
+                                        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary disabled">反馈</a>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">缩略图</text>
+                            </svg>
+                            <div class="card-body">
+                                <p class="card-text">这是一张更宽的卡，支持下面的文本作为附加内容的自然导入。这个内容有点长。</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">查看</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">编辑</button>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">缩略图</text>
+                            </svg>
+                            <div class="card-body">
+                                <p class="card-text">这是一张更宽的卡，支持下面的文本作为附加内容的自然导入。这个内容有点长。</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">查看</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">编辑</button>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">缩略图</text>
+                            </svg>
+                            <div class="card-body">
+                                <p class="card-text">这是一张更宽的卡，支持下面的文本作为附加内容的自然导入。这个内容有点长。</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">查看</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">编辑</button>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">缩略图</text>
+                            </svg>
+                            <div class="card-body">
+                                <p class="card-text">这是一张更宽的卡，支持下面的文本作为附加内容的自然导入。这个内容有点长。</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">查看</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">编辑</button>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">缩略图</text>
+                            </svg>
+                            <div class="card-body">
+                                <p class="card-text">这是一张更宽的卡，支持下面的文本作为附加内容的自然导入。这个内容有点长。</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">查看</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">编辑</button>
+                                    </div>
+                                    <small class="text-muted">9 分钟</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">回到顶端</a>
             </p>
-        </footer>
-
-    </div>
-
-    <!-- BG -->
-    <div id="bg"></div>
-
-    <div id="landlord">
-        <div class="message" style="opacity:0"></div>
-        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-        <div class="hide-button">隐藏</div>
-    </div>
-    <div id="tp-weather-widget"></div>
-    <!-- Scripts -->
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-    <script src="home_new/assets/js/browser.min.js"></script>
-    <script src="home_new/assets/js/breakpoints.min.js"></script>
-    <script src="home_new/assets/js/util.min.js"></script>
-    <script src="home_new/assets/js/main.min.js"></script>
-    <script>
-        const message_Path = 'https://6dduu6.github.io/live2d/'; //message.js的目录（必须填写，否则无法加载交互的文字）
-        const home_Path = 'https://wr0926.ml/'; //网站的根目录
-    </script>
-    <script src="home_new/cat/live2d/js/live2d.js"></script>
-    <script src="home_new/cat/live2d/js/message.min.js"></script>
-    <script>
-        loadlive2d("live2d", "home_new/cat/live2d/model/Pio/model.json"); //model.json和其模型等都需要放在服务器网站上
+            <p>相册示例是©；Bootstrap，但请下载并为您自己自定义它!</p>
+            <p>刚开始使用Bootstrap吗？<a href="#">访问主页</a>或阅读我们的 <a
+                    href="#">入门指南</a>.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <script>
-        (function () {
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            } else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
+        window.jQuery || document.write(
+            '<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"><\/script>')
     </script>
-    <script>
-        (function () {
-            var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
-            document.write('<script src="' + src + '" id="sozz"><\/script>');
-        })();
-    </script>
-    <div id="tp-weather-widget"></div>
-    <script>
-      (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
-      window.SeniverseWeatherWidget('show', {
-        flavor: "bubble",
-        location: "WX4FBXXFKE4F",
-        geolocation: true,
-        language: "zh-Hans",
-        unit: "c",
-        theme: "auto",
-        token: "d038f2e1-a134-457a-9fff-bd7d178c7692",
-        hover: "enabled",
-        container: "tp-weather-widget"
-      })
-    </script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
