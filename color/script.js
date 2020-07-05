@@ -10739,14 +10739,14 @@ new Vue({
         size: {
           "ellipse": {
             height: {
-              name: "Height",
+              name: "高度",
               amount: 100,
               unit: "%",
               min: 0,
               max: 100
             },
             width: {
-              name: "width",
+              name: "宽度",
               amount: 100,
               unit: "%",
               min: 0,
@@ -10755,7 +10755,7 @@ new Vue({
           },
           "circle": {
             length: {
-              name: "Length",
+              name: "长度",
               amount: 500,
               unit: "px",
               min: 0,
@@ -10765,14 +10765,14 @@ new Vue({
         },
         position: {
           vertical: {
-            name: "y-offset",
+            name: "Y轴偏移",
             amount: 50,
             unit: "%",
             min: 0,
             max: 100
           },
           horizontal: {
-            name: "x-offset",
+            name: "X轴偏移",
             amount: 50,
             unit: "%",
             min: 0,
