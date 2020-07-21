@@ -10,11 +10,11 @@
     <meta name="keywords" content="WR的主页,WR20060926主页,WR主页" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>WR主页</title>
-    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <script src="https://v1.hitokoto.cn?encode=js&select=%23hitokoto" defer></script>
     <script>
         function huan() {
             var xhr = new XMLHttpRequest();
-            xhr.open('get', 'https://v1.hitokoto.cn');
+            xhr.open('get', 'https://v1.hitokoto.cn?c=f&c=i&c=k');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     var data = JSON.parse(xhr.responseText);
