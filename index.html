@@ -11,27 +11,11 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>WR主页</title>
     <script src="https://v1.hitokoto.cn?encode=js&select=%23hitokoto" defer></script>
-    <script>
-        function huan() {
-            var xhr = new XMLHttpRequest();
-            xhr.open('get', 'https://v1.hitokoto.cn?c=f&c=i&c=k');
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    var data = JSON.parse(xhr.responseText);
-                    var hitokoto = document.getElementById('hitokoto');
-                    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-                    hitokoto.innerText = data.hitokoto;
-                }
-            }
-            xhr.send();
-        }
-    </script>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+    <link rel="canonical" href="https://wr0926.ml">
 
     <!-- Bootstrap core CSS -->
-    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        rel="stylesheet">
-
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -62,20 +46,70 @@
 
         html,
         body {
-
             scroll-behavior: smooth;
+        }
 
+        .jumbotron {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            margin-bottom: 0;
+            background-color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .jumbotron {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+        }
+
+        .jumbotron p:last-child {
+            margin-bottom: 0;
+        }
+
+        .jumbotron h1 {
+            font-weight: 300;
+        }
+
+        .jumbotron .container {
+            max-width: 40rem;
+        }
+
+        footer {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        footer p {
+            margin-bottom: .25rem;
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="./index/css/album.css" rel="stylesheet">
+    <!-- <link href="./index/css/album.css" rel="stylesheet"> -->
+    <script>
+        function huan() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'https://v1.hitokoto.cn?c=f&c=i&c=k');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    var data = JSON.parse(xhr.responseText);
+                    var hitokoto = document.getElementById('hitokoto');
+                    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+                    hitokoto.innerText = data.hitokoto;
+                }
+            }
+            xhr.send();
+        }
+    </script>
 </head>
 
 <body>
+    <!-- 头部开始 -->
     <header>
         <div class="collapse bg-dark" id="navbarHeader">
             <div class="container">
                 <div class="row" id="about">
+                    <!-- 关于板块 -->
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">
                             <svg t="1594048890704" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -86,9 +120,10 @@
                                 <path
                                     d="M227.555556 512h284.444444v56.888889H227.555556zM227.555556 711.111111h483.555555v56.888889H227.555556z"
                                     fill="#ffffff" p-id="4865"></path>
-                            </svg>关于</h4>
+                            </svg>&ensp;关于</h4>
                         <p class="text-muted">我是魏然，一名在校中学生，爱好前端。</p>
                     </div>
+                    <!-- 联系板块 -->
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">
                             <svg t="1594049078762" class="icon" viewBox="0 0 1117 1024" version="1.1"
@@ -96,12 +131,29 @@
                                 <path
                                     d="M1024 1024H93.090909a93.090909 93.090909 0 0 1-93.090909-93.090909V93.090909a93.090909 93.090909 0 0 1 93.090909-93.090909h930.909091a93.090909 93.090909 0 0 1 93.090909 93.090909v837.818182a93.090909 93.090909 0 0 1-93.090909 93.090909zM93.090909 930.909091h930.909091V352.395636l-425.099636 245.434182a358.027636 358.027636 0 0 1-74.891637 18.059637L93.090909 367.104V930.909091zM93.090909 93.090909v166.493091l454.050909 262.190545a40.215273 40.215273 0 0 1 5.213091-4.654545L1024 244.875636V93.090909H93.090909z"
                                     fill="#ffffff" p-id="7894"></path>
-                            </svg>联系</h4>
+                            </svg>&ensp;联系</h4>
                         <ul class="list-unstyled">
                             <!-- <li><a href="#" class="text-white disabled">在Twitter上关注</a></li> -->
                             <!-- <li><a href="#" class="text-white disabled">喜欢在Facebook上</a></li> -->
                             <li><a href="mailto:wr20060926@qq.com" class="text-white ">发电子邮件给我</a></li>
                         </ul>
+                    </div>
+                    <!-- 工具板块 -->
+                    <div class="col-sm-4 col-md-7">
+                        <h4 class="text-white">
+                            <svg t="1596122211791" class="icon" viewBox="0 0 1025 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="1390" width="30.029296875" height="30"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path
+                                    d="M293.0688 755.2c-12.0832 0-24.2688-4.2496-33.9968-12.9024L0 512l273.4592-243.0976C294.5536 250.2144 326.912 252.0064 345.7024 273.152c18.7904 21.1456 16.896 53.504-4.2496 72.2944L154.112 512l172.9536 153.7024c21.1456 18.7904 23.04 51.1488 4.2496 72.2944C321.2288 749.4144 307.1488 755.2 293.0688 755.2zM751.0528 755.0976 1024.512 512l-259.072-230.2976c-21.1456-18.7904-53.504-16.896-72.2432 4.2496-18.7904 21.1456-16.896 53.504 4.2496 72.2944L870.4 512l-187.3408 166.5024c-21.1456 18.7904-23.04 51.1488-4.2496 72.2944C688.896 762.2144 702.976 768 717.056 768 729.1392 768 741.3248 763.7504 751.0528 755.0976zM511.5392 827.648l102.4-614.4c4.6592-27.904-14.1824-54.272-42.0864-58.9312-28.0064-4.7104-54.3232 14.1824-58.88 42.0864l-102.4 614.4c-4.6592 27.904 14.1824 54.272 42.0864 58.9312C455.5264 870.1952 458.2912 870.4 461.1072 870.4 485.6832 870.4 507.392 852.6336 511.5392 827.648z"
+                                    p-id="1391" fill="#ffffff"></path>
+                            </svg>&ensp;工具</h4>
+                        <p class="text-light">
+                            <a href="tx/" class="text-muted">在线听写助手</a> |
+                            <a href="suijimima/" class="text-muted">随机密码生成器</a> |
+                            <a href="time-to/" class="text-muted">人生倒计时</a> |
+                            <a href="mp3/" class="text-muted">音频可视化</a> |
+                        </p>
                     </div>
                 </div>
             </div>
@@ -364,7 +416,7 @@
     <footer class="text-muted">
         <div class="container">
             <p class="float-right">
-                <a href="#top"><svg t="1594048155508" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                <a href="#"><svg t="1594048155508" class="icon" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="4128" width="32" height="32">
                         <path
                             d="M604.60391 201.152804c-24.735976-24.741976-57.624944-38.371963-92.60391-38.371963s-67.867934 13.629987-92.59691 38.371963L138.700365 481.854529c-24.734976 24.728976-38.358963 57.623944-38.358963 92.59791 0 34.972966 13.623987 67.854934 38.358963 92.59791a37.556963 37.556963 0 0 0 26.550974 10.999989h134.061869v214.97279c0 72.220929 58.748943 130.970872 130.956872 130.970872h163.45984c72.206929 0 130.955872-58.749943 130.955872-130.970872V678.050338H858.759661c9.95699 0 19.509981-3.958996 26.550974-10.999989 24.741976-24.741976 38.358963-57.624944 38.358963-92.61091-0.006-34.972966-13.628987-67.854934-38.370963-92.58391L604.60391 201.152804z m236.174769 401.793607H687.134829c-20.73798 0-37.552963 16.808984-37.552963 37.552964v252.522753c0 30.80497-25.053976 55.864945-55.851946 55.864945H430.27008c-30.79897 0-55.851945-25.060976-55.851946-55.864945V640.499375c0-20.74398-16.813984-37.552963-37.551963-37.552964H183.251321c-12.694988-21.429979-9.84599-49.581952 8.550992-67.989933L472.510039 254.253752c10.54899-10.54899 24.569976-16.367984 39.489961-16.367984s28.939972 5.817994 39.496961 16.367984l280.700726 280.702726c10.55499 10.56099 16.368984 24.581976 16.368984 39.495961-0.001 10.18199-2.709997 19.960981-7.787992 28.493972zM154.00535 100.145902h716.0003c30.41397 0 55.069946-22.418978 55.069947-50.069951S900.419621 0.006 870.00565 0.006H154.00535c-30.41397 0-55.081946 22.418978-55.081947 50.069951s24.667976 50.069951 55.081947 50.069951z"
@@ -384,8 +436,7 @@
                     </svg></a> 或 联系我 <a href="mailto:wr20060926@qq.com">wr20060926@qq.com</a>.</p>
         </div>
     </footer>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js" crossorigin="anonymous">
     </script>
     <script>
         window.jQuery || document.write(
