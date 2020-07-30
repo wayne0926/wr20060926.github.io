@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.0.1">
+  <title>Blog Template · Bootstrap</title>
+
+  <link rel="canonical" href="https://wr0926.ml/blog">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    html,
+    body {
+      scroll-behavior: smooth;
+    }
+    #navbarHeader {
+      width: 100%;
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="blog.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row" id="about">
+            <!-- 关于板块 -->
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">
+                <svg t="1594048890704" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  p-id="4863" width="30" height="30">
+                  <path
+                    d="M881.777778 1024H142.222222a56.888889 56.888889 0 0 1-56.888889-56.888889V56.888889a56.888889 56.888889 0 0 1 56.888889-56.888889h739.555556a56.888889 56.888889 0 0 1 56.888889 56.888889v910.222222a56.888889 56.888889 0 0 1-56.888889 56.888889z m0-938.666667a28.444444 28.444444 0 0 0-28.444445-28.444444H170.666667a28.444444 28.444444 0 0 0-28.444445 28.444444v853.333334a28.444444 28.444444 0 0 0 28.444445 28.444444h682.666666a28.444444 28.444444 0 0 0 28.444445-28.444444V85.333333z"
+                    fill="#ffffff" p-id="4864"></path>
+                  <path
+                    d="M227.555556 512h284.444444v56.888889H227.555556zM227.555556 711.111111h483.555555v56.888889H227.555556z"
+                    fill="#ffffff" p-id="4865"></path>
+                </svg>&ensp;关于</h4>
+              <p class="text-muted">我是魏然，一名在校中学生，爱好前端。</p>
+            </div>
+            <!-- 联系板块 -->
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">
+                <svg t="1594049078762" class="icon" viewBox="0 0 1117 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  p-id="7893" width="30" height="30">
+                  <path
+                    d="M1024 1024H93.090909a93.090909 93.090909 0 0 1-93.090909-93.090909V93.090909a93.090909 93.090909 0 0 1 93.090909-93.090909h930.909091a93.090909 93.090909 0 0 1 93.090909 93.090909v837.818182a93.090909 93.090909 0 0 1-93.090909 93.090909zM93.090909 930.909091h930.909091V352.395636l-425.099636 245.434182a358.027636 358.027636 0 0 1-74.891637 18.059637L93.090909 367.104V930.909091zM93.090909 93.090909v166.493091l454.050909 262.190545a40.215273 40.215273 0 0 1 5.213091-4.654545L1024 244.875636V93.090909H93.090909z"
+                    fill="#ffffff" p-id="7894"></path>
+                </svg>&ensp;联系</h4>
+              <ul class="list-unstyled">
+                <!-- <li><a href="#" class="text-white disabled">在Twitter上关注</a></li> -->
+                <!-- <li><a href="#" class="text-white disabled">喜欢在Facebook上</a></li> -->
+                <li><a href="mailto:wr20060926@qq.com" class="text-white ">发电子邮件给我</a></li>
+              </ul>
+            </div>
+            <!-- 工具板块 -->
+            <div class="col-sm-4 col-md-7">
+              <h4 class="text-white">
+                <svg t="1596122211791" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  p-id="1390" width="30.029296875" height="30" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <path
+                    d="M293.0688 755.2c-12.0832 0-24.2688-4.2496-33.9968-12.9024L0 512l273.4592-243.0976C294.5536 250.2144 326.912 252.0064 345.7024 273.152c18.7904 21.1456 16.896 53.504-4.2496 72.2944L154.112 512l172.9536 153.7024c21.1456 18.7904 23.04 51.1488 4.2496 72.2944C321.2288 749.4144 307.1488 755.2 293.0688 755.2zM751.0528 755.0976 1024.512 512l-259.072-230.2976c-21.1456-18.7904-53.504-16.896-72.2432 4.2496-18.7904 21.1456-16.896 53.504 4.2496 72.2944L870.4 512l-187.3408 166.5024c-21.1456 18.7904-23.04 51.1488-4.2496 72.2944C688.896 762.2144 702.976 768 717.056 768 729.1392 768 741.3248 763.7504 751.0528 755.0976zM511.5392 827.648l102.4-614.4c4.6592-27.904-14.1824-54.272-42.0864-58.9312-28.0064-4.7104-54.3232 14.1824-58.88 42.0864l-102.4 614.4c-4.6592 27.904 14.1824 54.272 42.0864 58.9312C455.5264 870.1952 458.2912 870.4 461.1072 870.4 485.6832 870.4 507.392 852.6336 511.5392 827.648z"
+                    p-id="1391" fill="#ffffff"></path>
+                </svg>&ensp;工具</h4>
+              <p class="text-light">
+                <a href="tx/" class="text-muted">在线听写助手</a> |
+                <a href="suijimima/" class="text-muted">随机密码生成器</a> |
+                <a href="time-to/" class="text-muted">人生倒计时</a> |
+                <a href="mp3/" class="text-muted">音频可视化</a> |
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="https://wr0926.ml/blog" class="navbar-brand d-flex align-items-center">
+            <svg t="1596128356787" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="1805" width="28" height="28" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path
+                d="M863.418182 698.181818c-13.963636 0-23.272727 9.309091-23.272727 23.272727v186.181819c0 39.563636-25.6 69.818182-69.818182 69.818181H134.981818c-41.890909 0-86.109091-30.254545-86.109091-69.818181V114.036364C48.872727 74.472727 93.090909 46.545455 134.981818 46.545455h635.345455c44.218182 0 69.818182 30.254545 69.818182 69.818181v325.818182c0 13.963636 9.309091 23.272727 23.272727 23.272727s23.272727-9.309091 23.272727-23.272727V116.363636c0-65.163636-46.545455-116.363636-116.363636-116.363636H134.981818C69.818182 0 2.327273 46.545455 2.327273 114.036364V907.636364c0 69.818182 69.818182 116.363636 132.654545 116.363636h635.345455c69.818182 0 116.363636-51.2 116.363636-116.363636v-186.181819c0-13.963636-11.636364-23.272727-23.272727-23.272727z m153.6-260.654545c-9.309091-9.309091-23.272727-9.309091-32.581818 0L512 889.018182c-9.309091 9.309091-9.309091 23.272727 0 32.581818 9.309091 9.309091 23.272727 9.309091 32.581818 0l472.436364-451.490909c6.981818-6.981818 6.981818-23.272727 0-32.581818zM630.690909 302.545455h-372.363636c-13.963636 0-23.272727 9.309091-23.272728 23.272727s9.309091 23.272727 23.272728 23.272727h372.363636c13.963636 0 23.272727-9.309091 23.272727-23.272727s-11.636364-23.272727-23.272727-23.272727z m0 232.727272h-372.363636c-13.963636 0-23.272727 9.309091-23.272728 23.272728s9.309091 23.272727 23.272728 23.272727h372.363636c13.963636 0 23.272727-9.309091 23.272727-23.272727s-11.636364-23.272727-23.272727-23.272728z"
+                fill="#e6e6e6" p-id="1806"></path>
+            </svg>
+            <strong>&ensp;WR博客</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+            aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+  <div class="container">
+ 
+    <div class="nav-scroller py-1 mb-1" style="height: 100%;">
+      <!-- <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="#">World</a>
+        <a class="p-2 text-muted" href="#">U.S.</a>
+        <a class="p-2 text-muted" href="#">Technology</a>
+        <a class="p-2 text-muted" href="#">Design</a>
+        <a class="p-2 text-muted" href="#">Culture</a>
+        <a class="p-2 text-muted" href="#">Business</a>
+        <a class="p-2 text-muted" href="#">Politics</a>
+        <a class="p-2 text-muted" href="#">Opinion</a>
+        <a class="p-2 text-muted" href="#">Science</a>
+        <a class="p-2 text-muted" href="#">Health</a>
+        <a class="p-2 text-muted" href="#">Style</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+      </nav> -->
+      <div class="alert alert-secondary">
+          <strong>欢迎来到WR的BLOG！</strong> 还在倾情打造中哟 ~
+      </div>
+    </div>
+
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently
+          about what’s most interesting in this post’s contents.</p>
+        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div
+          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">World</strong>
+            <h3 class="mb-0">Featured post</h3>
+            <div class="mb-1 text-muted">Nov 12</div>
+            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
+              additional content.</p>
+            <a href="#" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                dy=".3em">Thumbnail</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div
+          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Design</strong>
+            <h3 class="mb-0">Post title</h3>
+            <div class="mb-1 text-muted">Nov 11</div>
+            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional
+              content.</p>
+            <a href="#" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                dy=".3em">Thumbnail</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h3 class="pb-4 mb-4 font-italic border-bottom">
+          From the Firehose
+        </h3>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">Sample blog post</h2>
+          <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+
+          <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic
+            typography, images, and code are all supported.</p>
+          <hr>
+          <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus.
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est
+            at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+          <blockquote>
+            <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu
+              leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          </blockquote>
+          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum.
+            Aenean lacinia bibendum nulla sed consectetur.</p>
+          <h2>Heading</h2>
+          <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus,
+            nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac,
+            vestibulum at eros.</p>
+          <h3>Sub-heading</h3>
+          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+          <pre><code>Example code block</code></pre>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce
+            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+          <h3>Sub-heading</h3>
+          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia
+            bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac
+            cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <ul>
+            <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+            <li>Donec id elit non mi porta gravida at eget metus.</li>
+            <li>Nulla vitae elit libero, a pharetra augue.</li>
+          </ul>
+          <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+          <ol>
+            <li>Vestibulum id ligula porta felis euismod semper.</li>
+            <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+            <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+          </ol>
+          <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+        </div><!-- /.blog-post -->
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">Another blog post</h2>
+          <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
+
+          <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus.
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est
+            at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+          <blockquote>
+            <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu
+              leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          </blockquote>
+          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum.
+            Aenean lacinia bibendum nulla sed consectetur.</p>
+          <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus,
+            nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac,
+            vestibulum at eros.</p>
+        </div><!-- /.blog-post -->
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">New feature</h2>
+          <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
+
+          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia
+            bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac
+            cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <ul>
+            <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+            <li>Donec id elit non mi porta gravida at eget metus.</li>
+            <li>Nulla vitae elit libero, a pharetra augue.</li>
+          </ul>
+          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum.
+            Aenean lacinia bibendum nulla sed consectetur.</p>
+          <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+        </div><!-- /.blog-post -->
+
+        <nav class="blog-pagination">
+          <a class="btn btn-outline-primary" href="#">Older</a>
+          <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+        </nav>
+
+      </div><!-- /.blog-main -->
+
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="font-italic">About</h4>
+          <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit
+            amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+
+        <div class="p-4">
+          <h4 class="font-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">March 2014</a></li>
+            <li><a href="#">February 2014</a></li>
+            <li><a href="#">January 2014</a></li>
+            <li><a href="#">December 2013</a></li>
+            <li><a href="#">November 2013</a></li>
+            <li><a href="#">October 2013</a></li>
+            <li><a href="#">September 2013</a></li>
+            <li><a href="#">August 2013</a></li>
+            <li><a href="#">July 2013</a></li>
+            <li><a href="#">June 2013</a></li>
+            <li><a href="#">May 2013</a></li>
+            <li><a href="#">April 2013</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="font-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </aside><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+  </main><!-- /.container -->
+
+  <footer class="blog-footer">
+    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
+        href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js" crossorigin="anonymous">
+  </script>
+  <script>
+    window.jQuery || document.write(
+      '<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"><\/script>')
+  </script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
