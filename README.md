@@ -1,8 +1,9 @@
 # 个人搭建的一个网站
+# 此库已经停止更新，大部分文件转至[wrblog.github.io](https://github.com/wr20060926/wrblog.github.io)
 
 此网站由@wr20060926 维护运行
 
-点击访问：[wr0926.ml](https://wr0926.ml)
+## 点击访问：[wr0926.ml](https://wr0926.ml)
 
 
 
