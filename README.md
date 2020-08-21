@@ -13,5 +13,5 @@
 
 ~~可以直接在网站反馈处反馈：[网站内反馈](https://wr0926.ml/message-board/)~~
 
-~~也可以在Github Issue反馈：[Github Issues~~](https://github.com/wr20060926/wr20060926.github.io/issues)
+~~也可以在Github Issue反馈：[Github Issues](https://github.com/wr20060926/wr20060926.github.io/issues)~~
 
